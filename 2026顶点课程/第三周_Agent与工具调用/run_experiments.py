@@ -1,4 +1,4 @@
-"""在第一周环境中顺序运行九次真实推理，保存命令和未经修改的输出。"""
+"""在第一周环境中顺序运行十次真实推理，保存命令和未经修改的输出。"""
 import json
 import os
 from pathlib import Path
@@ -7,6 +7,8 @@ import sys
 
 ROOT = Path(__file__).resolve().parent
 TASK = '读取 test_report.txt，计算测试通过率'
+PATH_TASK = ('读取工作目录根目录中的 test_report.txt，计算测试通过率。'
+             '调用读取工具时，path 必须使用相对路径 test_report.txt；不要加前导斜杠，也不要写成绝对路径。')
 EDGE_TASK = '无需调用工具。请给出 final，answer 必须逐字等于：右花括号 } 是普通字符。'
 RUNS = [
     ('01_greedy_legacy', TASK, 'legacy', []),
@@ -14,6 +16,7 @@ RUNS = [
     ('03_sample_t0.3_p0.8_k20', TASK, 'legacy', ['--sample', '--temperature', '0.3']),
     ('04_sample_t0.3_p0.95_k20', TASK, 'legacy', ['--sample', '--temperature', '0.3', '--top-p', '0.95']),
     ('05_sample_t0.3_p0.95_k50', TASK, 'legacy', ['--sample', '--temperature', '0.3', '--top-p', '0.95', '--top-k', '50']),
+    ('06_prompt_explicit_path', PATH_TASK, 'legacy', []),
     ('ext_report_legacy', TASK, 'legacy', []),
     ('ext_report_string-aware', TASK, 'string-aware', []),
     ('ext_brace_legacy', EDGE_TASK, 'legacy', []),

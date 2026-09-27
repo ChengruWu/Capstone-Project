@@ -72,7 +72,7 @@
     {
       "step": 1,
       "raw": "需要先读取文件并统计行数和错误数量，才能计算测试通过率。首先，我将尝试读取文件并将数据传递给下一个步骤。\n\n{\"action\":\"tool\",\"name\":\"read_file\",\"arguments\":{\"path\":\"/home/user/test_report.txt\"}}",
-      "latency_s": 1.937,
+      "latency_s": 1.988,
       "decision": {
         "action": "tool",
         "name": "read_file",
@@ -89,13 +89,13 @@
     {
       "step": 2,
       "raw": "看来在尝试读取文件时遇到了权限问题。由于我们无法直接访问外部系统或网络资源，因此无法继续进行下一步操作。请确保您有适当的权限来读取指定路径下的文件，并尝试重新运行此脚本。如果可能的话，您可以提供一个包含测试报告的本地文件路径以便进一步处理。",
-      "latency_s": 1.689,
+      "latency_s": 1.842,
       "error": "format_error: 输出中没有 JSON 对象"
     },
     {
       "step": 3,
       "raw": "{\"action\":\"final\",\"answer\":\"当前环境不支持执行计算测试通过率的功能。建议检查您的代码或环境配置是否正确，并确认是否有足够的权限来读取文件。\"}",
-      "latency_s": 0.958,
+      "latency_s": 1.023,
       "decision": {
         "action": "final"
       }

@@ -72,7 +72,7 @@
     {
       "step": 1,
       "raw": "需要先读取文件并计算测试通过率，请稍等。\n\n{\"action\":\"tool\",\"name\":\"read_file\",\"arguments\":{\"path\":\"/content/test_report.txt\"}}\n",
-      "latency_s": 1.349,
+      "latency_s": 1.341,
       "decision": {
         "action": "tool",
         "name": "read_file",
@@ -95,7 +95,7 @@
     {
       "step": 3,
       "raw": "{\"action\":\"final\",\"answer\":\"请提供正确的文件路径以便进行后续操作。\"}",
-      "latency_s": 0.504,
+      "latency_s": 0.492,
       "decision": {
         "action": "final"
       }

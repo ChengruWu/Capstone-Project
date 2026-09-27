@@ -181,6 +181,39 @@
     "returncode": 0
   },
   {
+    "name": "06_prompt_explicit_path",
+    "command": "& 'D:\\桌面\\大四文件夹\\Capstone-Project\\2026顶点课程\\第一周_LLM推理\\.venv\\Scripts\\python.exe' '-X' 'utf8' 'agent_v0.py' '--backend' 'hf' '--model' '../第一周_LLM推理/models/Qwen2.5-1.5B-Instruct' '--device' 'cuda' '--task' '读取工作目录根目录中的 test_report.txt，计算测试通过率。调用读取工具时，path 必须使用相对路径 test_report.txt；不要加前导斜杠，也不要写成绝对路径。' '--max-steps' '6' '--max-failures' '2' '--max-new-tokens' '256' '--workdir' 'workspace' '--seed' '42' '--json-stop' 'legacy' '--output' 'results/06_prompt_explicit_path.json'",
+    "argv": [
+      "D:\\桌面\\大四文件夹\\Capstone-Project\\2026顶点课程\\第一周_LLM推理\\.venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "agent_v0.py",
+      "--backend",
+      "hf",
+      "--model",
+      "../第一周_LLM推理/models/Qwen2.5-1.5B-Instruct",
+      "--device",
+      "cuda",
+      "--task",
+      "读取工作目录根目录中的 test_report.txt，计算测试通过率。调用读取工具时，path 必须使用相对路径 test_report.txt；不要加前导斜杠，也不要写成绝对路径。",
+      "--max-steps",
+      "6",
+      "--max-failures",
+      "2",
+      "--max-new-tokens",
+      "256",
+      "--workdir",
+      "workspace",
+      "--seed",
+      "42",
+      "--json-stop",
+      "legacy",
+      "--output",
+      "results/06_prompt_explicit_path.json"
+    ],
+    "returncode": 0
+  },
+  {
     "name": "ext_report_legacy",
     "command": "& 'D:\\桌面\\大四文件夹\\Capstone-Project\\2026顶点课程\\第一周_LLM推理\\.venv\\Scripts\\python.exe' '-X' 'utf8' 'agent_v0.py' '--backend' 'hf' '--model' '../第一周_LLM推理/models/Qwen2.5-1.5B-Instruct' '--device' 'cuda' '--task' '读取 test_report.txt，计算测试通过率' '--max-steps' '6' '--max-failures' '2' '--max-new-tokens' '256' '--workdir' 'workspace' '--seed' '42' '--json-stop' 'legacy' '--output' 'results/ext_report_legacy.json'",
     "argv": [

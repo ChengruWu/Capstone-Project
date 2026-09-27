@@ -72,19 +72,19 @@
     {
       "step": 1,
       "raw": "{\"action\":\"final\",\"answer\":\"右花括号 }",
-      "latency_s": 0.846,
+      "latency_s": 0.861,
       "error": "format_error: 1 validation error for tagged-union[ToolCall,Final]\n  Invalid JSON: EOF while parsing a string at line 1 column 42 [type=json_invalid, input_value='{\"action\":\"final\",\"answer\":\"右花括号 }', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/json_invalid"
     },
     {
       "step": 2,
       "raw": "{\"action\":\"final\",\"answer\":\"}\"",
-      "latency_s": 0.226,
+      "latency_s": 0.236,
       "error": "format_error: 1 validation error for tagged-union[ToolCall,Final]\n  Invalid JSON: EOF while parsing a string at line 1 column 29 [type=json_invalid, input_value='{\"action\":\"final\",\"answer\":\"}', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/json_invalid"
     },
     {
       "step": 3,
       "raw": "{\"action\":\"final\",\"answer\":'}",
-      "latency_s": 0.232,
+      "latency_s": 0.256,
       "error": "format_error: 1 validation error for tagged-union[ToolCall,Final]\n  Invalid JSON: expected value at line 1 column 28 [type=json_invalid, input_value='{\"action\":\"final\",\"answer\":\\'}', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/json_invalid"
     }
   ]

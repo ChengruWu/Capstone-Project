@@ -3,7 +3,7 @@
   "checks": [
     {
       "file": "results\\01_greedy_legacy.json",
-      "sha256": "2a9d60e5a8c90e7172ec2107a142c71ab6a97d079409d50766997754c748321b",
+      "sha256": "9883ec5eb490f8cee5127c16cd35ef04b25d998ba2b5f8340d66295eddd2fc33",
       "status": "ok",
       "answer": "请提供正确的文件路径以便进行后续操作。",
       "successful_tools": [],
@@ -12,7 +12,7 @@
     },
     {
       "file": "results\\02_sample_t0.7_p0.8_k20.json",
-      "sha256": "8be5376800dd4d90115fb37d65a54a3d2c17ed71457da36e06765bb07fa1f43a",
+      "sha256": "dee84884c682e8da07a85502f9ced571aa7d8adc51ab936da0d6d714c7f4865a",
       "status": "too_many_failures",
       "answer": null,
       "successful_tools": [],
@@ -21,7 +21,7 @@
     },
     {
       "file": "results\\03_sample_t0.3_p0.8_k20.json",
-      "sha256": "56ed5ab54018ff190c7846ddcc0a13d7f0cdfc055cc9cdc0336a562c53a43f07",
+      "sha256": "aba7de98f028bd6696b7287705d9c1d2b9386e600562ef34ca28d57e11569a35",
       "status": "ok",
       "answer": "无法完成任务的原因在于无法读取指定的文件。请确认文件是否存在并且具有可读权限。",
       "successful_tools": [],
@@ -30,7 +30,7 @@
     },
     {
       "file": "results\\04_sample_t0.3_p0.95_k20.json",
-      "sha256": "18011708124dc72761e88f2e6707002ee8271b4e94b925fffd032d622431c99e",
+      "sha256": "50c89b4a29fd62f93d46501c4177b0a97a2d3f8a75c2bc8ad8cc506c6b4a3664",
       "status": "ok",
       "answer": "当前环境不支持执行计算测试通过率的功能。建议检查您的代码或环境配置是否正确，并确认是否有足够的权限来读取文件。",
       "successful_tools": [],
@@ -39,7 +39,7 @@
     },
     {
       "file": "results\\05_sample_t0.3_p0.95_k50.json",
-      "sha256": "5d377c65857029a2392049188bae4eb2baab053323a01191bfdca1be718a4d8f",
+      "sha256": "71c2804933637efd0bc603dcece48188d63f07001d4eae46cf7cbb1d85ed3923",
       "status": "ok",
       "answer": "当前环境不支持执行计算测试通过率的功能。建议检查您的代码或环境配置是否正确，并确认是否有足够的权限来读取文件。",
       "successful_tools": [],
@@ -47,8 +47,17 @@
       "edge_exact_match": null
     },
     {
+      "file": "results\\06_prompt_explicit_path.json",
+      "sha256": "5a3369c145a3351f85e6d4e67ec78d2e4b67fd8da0319f71c16692ef3e5b112d",
+      "status": "ok",
+      "answer": "经过处理后的数据：{'file_path': 'test_report.txt', 'line_count': 3, 'word_count': 5, 'character_count': 40}",
+      "successful_tools": [],
+      "answer_contains_94_percent": false,
+      "edge_exact_match": null
+    },
+    {
       "file": "results\\ext_report_legacy.json",
-      "sha256": "690b03c04c027d3428d721152949aad68784aa5b8c4d6d20e38477a03a3a455a",
+      "sha256": "1a0967dd372d90a5d54f1a3806536aab516cbfa021d190acc7066f7140564719",
       "status": "ok",
       "answer": "请提供正确的文件路径以便进行后续操作。",
       "successful_tools": [],
@@ -57,7 +66,7 @@
     },
     {
       "file": "results\\ext_report_string-aware.json",
-      "sha256": "3c4d3259b1970e3b763ef281afe98d5a363d7f34fa89bac38d3f6d4954e26a24",
+      "sha256": "e3dc341ccd0299596c5edeb3f96f19ceeaeb03de6035bdfc2d7cf069fe5422ef",
       "status": "ok",
       "answer": "请提供正确的文件路径以便进行后续操作。",
       "successful_tools": [],
@@ -66,7 +75,7 @@
     },
     {
       "file": "results\\ext_brace_legacy.json",
-      "sha256": "1269a6f55e3df48126727d2c6df2df130b24742a9bb158fbe863ed6a25533061",
+      "sha256": "85079b4b8e28259e1a845bbaa40ff53dfd965c480b6b2a6dd82417091999aee1",
       "status": "too_many_failures",
       "answer": null,
       "successful_tools": [],
@@ -75,12 +84,23 @@
     },
     {
       "file": "results\\ext_brace_string-aware.json",
-      "sha256": "7fae801a72e6f596729d40953323edceba091d9745e7748a443df19a7109c833",
+      "sha256": "98ad5dab0fde6c92dea2363daa201ef6826ef153601bb5ef9e0161c8a01e601d",
       "status": "ok",
       "answer": "右花括号 } 是普通字符。",
       "successful_tools": [],
       "answer_contains_94_percent": false,
       "edge_exact_match": true
     }
-  ]
+  ],
+  "prompt_pair": {
+    "original_file": "results/01_greedy_legacy.json",
+    "original_status": "ok",
+    "original_answer": "请提供正确的文件路径以便进行后续操作。",
+    "replacement_file": "results/06_prompt_explicit_path.json",
+    "replacement_status": "ok",
+    "replacement_answer": "经过处理后的数据：{'file_path': 'test_report.txt', 'line_count': 3, 'word_count': 5, 'character_count': 40}",
+    "only_changed_config": [
+      "task"
+    ]
+  }
 }

@@ -72,7 +72,7 @@
     {
       "step": 1,
       "raw": "需要先读取文件并计算测试通过率，请稍等。\n\n{\"action\":\"tool\",\"name\":\"read_file\",\"arguments\":{\"path\":\"/content/test_report.txt\"}}\n",
-      "latency_s": 1.322,
+      "latency_s": 1.358,
       "decision": {
         "action": "tool",
         "name": "read_file",
@@ -89,13 +89,13 @@
     {
       "step": 2,
       "raw": "对不起，我无法继续操作。请确保您尝试访问的路径是正确的，并且具有相应的权限来读取该文件。您可以尝试使用工作目录内的相对路径，而不是绝对路径。例如，如果您在名为“test_project”的项目中，路径应该是`/test_project/test_report.txt`。",
-      "latency_s": 1.463,
+      "latency_s": 1.553,
       "error": "format_error: 输出中没有 JSON 对象"
     },
     {
       "step": 3,
       "raw": "{\"action\":\"final\",\"answer\":\"请提供正确的文件路径以便进行后续操作。\"}",
-      "latency_s": 0.49,
+      "latency_s": 0.494,
       "decision": {
         "action": "final"
       }

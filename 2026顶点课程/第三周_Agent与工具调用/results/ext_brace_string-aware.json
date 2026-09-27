@@ -56,7 +56,7 @@
     {
       "step": 1,
       "raw": "{\"action\":\"final\",\"answer\":\"右花括号 } 是普通字符。\"}",
-      "latency_s": 0.999,
+      "latency_s": 1.002,
       "decision": {
         "action": "final"
       }
