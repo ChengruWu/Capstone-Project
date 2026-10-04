@@ -324,7 +324,7 @@ class _BalancedJSONStop:
 
 
 def make_hf_llm(model_dir, device, max_new_tokens, sample=False, temperature=0.7, top_p=0.8, top_k=20,
-                json_stop="string-aware"):
+                json_stop="string-aware", quantization="none", max_context_tokens=4096):
     """本地 transformers 推理：加载一次模型，返回的 llm() 每次都跑一次完整的 generate。"""
     import torch
     from transformers import AutoModelForCausalLM, AutoTokenizer, StoppingCriteriaList
@@ -334,7 +334,19 @@ def make_hf_llm(model_dir, device, max_new_tokens, sample=False, temperature=0.7
     # CPU 用 bf16：内存只要 float32 的一半，7B/14B 这类模型更安全；GPU 上先确认硬件真的
     # 支持 bf16（Ampere 及更新架构），不支持则退回 fp16，避免在老显卡上报错或跑得很慢。
     dtype = torch.bfloat16 if device == "cpu" or torch.cuda.is_bf16_supported() else torch.float16
-    model = AutoModelForCausalLM.from_pretrained(model_dir, torch_dtype=dtype).to(device).eval()
+    if quantization == "nf4":
+        if device != "cuda":
+            raise ValueError("NF4 本地方案要求 --device cuda")
+        from transformers import BitsAndBytesConfig
+        quant_config = BitsAndBytesConfig(load_in_4bit=True, bnb_4bit_quant_type="nf4",
+                                          bnb_4bit_use_double_quant=True,
+                                          bnb_4bit_compute_dtype=dtype)
+        # 显式放到单张 GPU；避免自动卸载到 CPU 后静默降低推理速度。
+        model = AutoModelForCausalLM.from_pretrained(
+            model_dir, torch_dtype=dtype, quantization_config=quant_config,
+            device_map={"": 0}, low_cpu_mem_usage=True, attn_implementation="sdpa").eval()
+    else:
+        model = AutoModelForCausalLM.from_pretrained(model_dir, torch_dtype=dtype).to(device).eval()
     # sample=False（默认）：贪心解码，每步都选概率最高的 token，同样的输入永远得到同样的
     # 输出，方便复现和调试；sample=True：按 temperature/top_p/top_k 做随机采样，同样的
     # 输入每次跑出来可能不一样，适合多跑几次、观察成功率的波动。
@@ -348,6 +360,8 @@ def make_hf_llm(model_dir, device, max_new_tokens, sample=False, temperature=0.7
         # 标记的纯文本；add_generation_prompt=True 会在末尾加上“该模型回复了”的引导标记。
         text = tok.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
         inputs = tok(text, return_tensors="pt").to(device)
+        if inputs.input_ids.shape[1] + max_new_tokens > max_context_tokens:
+            raise ValueError(f"输入和输出预算超过 {max_context_tokens} tokens；请提高 --max-context-tokens")
         stopping = StoppingCriteriaList([_BalancedJSONStop(tok, inputs.input_ids.shape[1], json_stop)])
         with torch.inference_mode():
             out = model.generate(**inputs, max_new_tokens=max_new_tokens, stopping_criteria=stopping, **gen_kwargs)
@@ -355,6 +369,9 @@ def make_hf_llm(model_dir, device, max_new_tokens, sample=False, temperature=0.7
         # 那部分长度（inputs.input_ids.shape[1]），只解码新生成的这一段。
         return tok.decode(out[0, inputs.input_ids.shape[1]:], skip_special_tokens=True)
     llm.dtype = str(dtype)
+    llm.quantization = quantization
+    llm.model_memory_bytes = model.get_memory_footprint()
+    llm.device_map = {key: str(value) for key, value in getattr(model, "hf_device_map", {"": device}).items()}
     return llm
 
 
@@ -443,6 +460,8 @@ def main():
     ap.add_argument("--backend", choices=["hf", "openai"], default="hf")
     ap.add_argument("--model", default="./models/Qwen2.5-1.5B-Instruct", help="hf: 本地目录；openai: 服务端模型名")
     ap.add_argument("--device", default="cpu")
+    ap.add_argument("--quantization", choices=["none", "nf4"], default="none", help="hf 权重量化；7B/8GB 显存建议 nf4")
+    ap.add_argument("--max-context-tokens", type=int, default=4096, help="hf 输入与输出总预算；超限报错，不截断调用链")
     ap.add_argument("--base-url", default="http://localhost:8000/v1")
     ap.add_argument("--task", default="计算 1024*1024")
     ap.add_argument("--max-steps", type=int, default=6)
@@ -458,6 +477,10 @@ def main():
     ap.add_argument("--json-stop", choices=["legacy", "string-aware"], default="string-aware",
                     help="hf JSON 停止条件：原版或识别字符串与转义的修正版")
     args = ap.parse_args()
+    if args.quantization != "none" and (args.backend != "hf" or args.device != "cuda"):
+        ap.error("--quantization nf4 只支持 --backend hf --device cuda")
+    if args.max_new_tokens <= 0 or args.max_context_tokens <= args.max_new_tokens:
+        ap.error("需要 0 < max-new-tokens < max-context-tokens")
 
     if args.selftest:
         raise SystemExit(0 if selftest() else 1)
@@ -470,6 +493,9 @@ def main():
     environment = {"python": platform.python_version(), "dependencies": {
         name: importlib.metadata.version(name) for name in ("pydantic", "transformers", "torch", "openai")}}
     if args.backend == "hf":
+        if args.quantization == "nf4":
+            environment["dependencies"].update({name: importlib.metadata.version(name)
+                                                for name in ("bitsandbytes", "accelerate")})
         import torch
         from transformers import set_seed
         set_seed(args.seed)
@@ -480,11 +506,14 @@ def main():
                                gpu_free_before_bytes=free, gpu_total_bytes=total)
     llm = (make_hf_llm(args.model, args.device, args.max_new_tokens,
                         sample=args.sample, temperature=args.temperature, top_p=args.top_p, top_k=args.top_k,
-                        json_stop=args.json_stop)
+                        json_stop=args.json_stop, quantization=args.quantization,
+                        max_context_tokens=args.max_context_tokens)
            if args.backend == "hf" else make_openai_llm(args.base_url, args.model, args.max_new_tokens))
     result = run_agent(args.task, llm, args.max_steps, args.max_failures)
     if args.backend == "hf":
         environment["dtype"] = llm.dtype
+        environment.update(quantization=llm.quantization, model_memory_bytes=llm.model_memory_bytes,
+                           device_map=llm.device_map)
         if args.device == "cuda":
             torch.cuda.synchronize()
             environment.update(peak_allocated_bytes=torch.cuda.max_memory_allocated(),

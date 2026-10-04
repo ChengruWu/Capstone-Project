@@ -1,0 +1,148 @@
+{
+  "verification": "PASS",
+  "checks": [
+    {
+      "file": "results_7b\\01_greedy_legacy.json",
+      "sha256": "7aa0ce6f75d961721bd1e3b2ce622b0b0ff2d5f677382a0fa88b1562c4758d65",
+      "status": "ok",
+      "answer": "测试通过率为：(47 / (47 + 3)) * 100 = 93.5%",
+      "successful_tools": [
+        "read_file",
+        "read_file"
+      ],
+      "answer_contains_94_percent": false,
+      "report_tool_chain_complete": false,
+      "edge_exact_match": null
+    },
+    {
+      "file": "results_7b\\02_sample_t0.7_p0.8_k20.json",
+      "sha256": "a26c0b836fc4742fb40a2527e56d9286bdc99be0c4eb36e13ce6af8ccb9a9fdf",
+      "status": "ok",
+      "answer": "测试通过率为 94.0%",
+      "successful_tools": [
+        "read_file",
+        "calculator"
+      ],
+      "answer_contains_94_percent": true,
+      "report_tool_chain_complete": true,
+      "edge_exact_match": null
+    },
+    {
+      "file": "results_7b\\03_sample_t0.3_p0.8_k20.json",
+      "sha256": "3fed0f36fc289a6862dcdc562dc8fa6bbe36b877eef40e3cc3866c8c68b7722e",
+      "status": "ok",
+      "answer": "测试通过率为 94.0%",
+      "successful_tools": [
+        "read_file",
+        "calculator"
+      ],
+      "answer_contains_94_percent": true,
+      "report_tool_chain_complete": true,
+      "edge_exact_match": null
+    },
+    {
+      "file": "results_7b\\04_sample_t0.3_p0.95_k20.json",
+      "sha256": "6a3a950ea7b82a5804a89be4da6e08d5c4170317254c815bfff78aeff6afb9cf",
+      "status": "ok",
+      "answer": "测试通过率为 94.0%",
+      "successful_tools": [
+        "read_file",
+        "calculator"
+      ],
+      "answer_contains_94_percent": true,
+      "report_tool_chain_complete": true,
+      "edge_exact_match": null
+    },
+    {
+      "file": "results_7b\\05_sample_t0.3_p0.95_k50.json",
+      "sha256": "faf5d73d9c00f014e389f5292d2af65bb9f5c2a2b60beaf2ea6c7781600ad197",
+      "status": "ok",
+      "answer": "测试通过率为 94.0%",
+      "successful_tools": [
+        "read_file",
+        "calculator"
+      ],
+      "answer_contains_94_percent": true,
+      "report_tool_chain_complete": true,
+      "edge_exact_match": null
+    },
+    {
+      "file": "results_7b\\06_prompt_explicit_path.json",
+      "sha256": "001bbd058de44394bcb2d4ec69f48922e8dad7bd25e032f430164e0cf0882571",
+      "status": "ok",
+      "answer": "测试通过率为：94%",
+      "successful_tools": [
+        "read_file"
+      ],
+      "answer_contains_94_percent": true,
+      "report_tool_chain_complete": false,
+      "edge_exact_match": null
+    },
+    {
+      "file": "results_7b\\ext_report_legacy.json",
+      "sha256": "5c2baa3a59aea18d0234ffbb4aa59ca1add53b22e693b2b719128363e8bc5146",
+      "status": "ok",
+      "answer": "测试通过率为：(47 / (47 + 3)) * 100 = 93.5%",
+      "successful_tools": [
+        "read_file",
+        "read_file"
+      ],
+      "answer_contains_94_percent": false,
+      "report_tool_chain_complete": false,
+      "edge_exact_match": null
+    },
+    {
+      "file": "results_7b\\ext_report_string-aware.json",
+      "sha256": "b62c7488834c45da90a4e8087cfe13ed5c11237b6ec542c3a65b884a535031ee",
+      "status": "ok",
+      "answer": "测试通过率为：(47 / (47 + 3)) * 100 = 93.5%",
+      "successful_tools": [
+        "read_file",
+        "read_file"
+      ],
+      "answer_contains_94_percent": false,
+      "report_tool_chain_complete": false,
+      "edge_exact_match": null
+    },
+    {
+      "file": "results_7b\\ext_brace_legacy.json",
+      "sha256": "ded5ac8805f4905864e73af2ab52eefac6e98e9ff4c1f5e8c973ac5b84bad544",
+      "status": "too_many_failures",
+      "answer": null,
+      "successful_tools": [],
+      "answer_contains_94_percent": false,
+      "report_tool_chain_complete": false,
+      "edge_exact_match": false
+    },
+    {
+      "file": "results_7b\\ext_brace_string-aware.json",
+      "sha256": "fd3cb021b8025561f579086eb46c8fdd87c00242fc693b68bff82660047a76de",
+      "status": "ok",
+      "answer": "右花括号 } 是普通字符。",
+      "successful_tools": [],
+      "answer_contains_94_percent": false,
+      "report_tool_chain_complete": false,
+      "edge_exact_match": true
+    }
+  ],
+  "prompt_pair": {
+    "original_file": "results_7b\\01_greedy_legacy.json",
+    "original_status": "ok",
+    "original_answer": "测试通过率为：(47 / (47 + 3)) * 100 = 93.5%",
+    "replacement_file": "results_7b\\06_prompt_explicit_path.json",
+    "replacement_status": "ok",
+    "replacement_answer": "测试通过率为：94%",
+    "only_changed_config": [
+      "task"
+    ]
+  },
+  "recommended": {
+    "file": "results_7b\\07_recommended_sample_string-aware.json",
+    "sha256": "84e6a199d7a06cc52ed7e6524b63f3f0760f84f7e28bcb94c8fe59effbde1adc",
+    "status": "ok",
+    "answer": "测试通过率为 94.0%",
+    "only_changed_config_vs_run_3": [
+      "json_stop"
+    ]
+  }
+}

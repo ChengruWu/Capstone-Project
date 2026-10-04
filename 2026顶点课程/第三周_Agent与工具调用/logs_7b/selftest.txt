@@ -1,4 +1,4 @@
-﻿PASS  T1 单步计算: status=ok steps=2
+PASS  T1 单步计算: status=ok steps=2
 PASS  T2 两步调用: status=ok steps=3
 PASS  T3 无需工具: status=ok steps=1
 PASS  T4a 参数非法后修正: status=ok steps=3

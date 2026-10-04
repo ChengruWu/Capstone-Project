@@ -1,0 +1,90 @@
+{
+  "fields": [
+    "memory_used_MiB",
+    "utilization_percent",
+    "power_W",
+    "temperature_C"
+  ],
+  "samples": [
+    {
+      "elapsed_s": 0,
+      "values": "4299, 38, 15.58, 49"
+    },
+    {
+      "elapsed_s": 2,
+      "values": "4309, 36, 19.20, 49"
+    },
+    {
+      "elapsed_s": 4,
+      "values": "4317, 30, 14.65, 48"
+    },
+    {
+      "elapsed_s": 6,
+      "values": "4858, 22, 12.24, 48"
+    },
+    {
+      "elapsed_s": 8,
+      "values": "6165, 24, 14.27, 48"
+    },
+    {
+      "elapsed_s": 10,
+      "values": "6535, 9, 12.66, 48"
+    },
+    {
+      "elapsed_s": 12,
+      "values": "6585, 86, 73.26, 59"
+    },
+    {
+      "elapsed_s": 14,
+      "values": "6599, 100, 76.69, 60"
+    },
+    {
+      "elapsed_s": 16,
+      "values": "793, 4, 23.18, 51"
+    },
+    {
+      "elapsed_s": 18,
+      "values": "886, 4, 14.59, 49"
+    },
+    {
+      "elapsed_s": 20,
+      "values": "4272, 33, 20.19, 50"
+    },
+    {
+      "elapsed_s": 22,
+      "values": "4286, 36, 23.63, 50"
+    },
+    {
+      "elapsed_s": 24,
+      "values": "4300, 25, 26.19, 51"
+    },
+    {
+      "elapsed_s": 26,
+      "values": "4306, 20, 18.78, 50"
+    },
+    {
+      "elapsed_s": 28,
+      "values": "4550, 23, 12.96, 49"
+    },
+    {
+      "elapsed_s": 30,
+      "values": "5896, 18, 15.04, 49"
+    },
+    {
+      "elapsed_s": 32,
+      "values": "6404, 28, 12.94, 49"
+    },
+    {
+      "elapsed_s": 34,
+      "values": "6584, 100, 73.08, 58"
+    },
+    {
+      "elapsed_s": 36,
+      "values": "6590, 86, 78.45, 59"
+    },
+    {
+      "elapsed_s": 38,
+      "values": "793, 7, 51.54, 52"
+    }
+  ]
+}

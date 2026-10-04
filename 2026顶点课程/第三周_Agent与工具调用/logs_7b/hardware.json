@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-04",
+  "platform": "Windows-11-10.0.22631-SP0",
+  "python": "3.12.1",
+  "ram_total_bytes": 16978403328,
+  "ram_available_bytes": 5979308032,
+  "cpu_logical": 32,
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "cuda": "12.1",
+  "gpu_total_bytes": 8585216000,
+  "dependencies": {
+    "torch": "2.4.0+cu121",
+    "transformers": "4.51.3",
+    "accelerate": "1.6.0",
+    "bitsandbytes": "0.45.5",
+    "psutil": "7.2.2"
+  }
+}

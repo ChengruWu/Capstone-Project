@@ -8,6 +8,7 @@
       "answer": "请提供正确的文件路径以便进行后续操作。",
       "successful_tools": [],
       "answer_contains_94_percent": false,
+      "report_tool_chain_complete": false,
       "edge_exact_match": null
     },
     {
@@ -17,6 +18,7 @@
       "answer": null,
       "successful_tools": [],
       "answer_contains_94_percent": false,
+      "report_tool_chain_complete": false,
       "edge_exact_match": null
     },
     {
@@ -26,6 +28,7 @@
       "answer": "无法完成任务的原因在于无法读取指定的文件。请确认文件是否存在并且具有可读权限。",
       "successful_tools": [],
       "answer_contains_94_percent": false,
+      "report_tool_chain_complete": false,
       "edge_exact_match": null
     },
     {
@@ -35,6 +38,7 @@
       "answer": "当前环境不支持执行计算测试通过率的功能。建议检查您的代码或环境配置是否正确，并确认是否有足够的权限来读取文件。",
       "successful_tools": [],
       "answer_contains_94_percent": false,
+      "report_tool_chain_complete": false,
       "edge_exact_match": null
     },
     {
@@ -44,6 +48,7 @@
       "answer": "当前环境不支持执行计算测试通过率的功能。建议检查您的代码或环境配置是否正确，并确认是否有足够的权限来读取文件。",
       "successful_tools": [],
       "answer_contains_94_percent": false,
+      "report_tool_chain_complete": false,
       "edge_exact_match": null
     },
     {
@@ -53,6 +58,7 @@
       "answer": "经过处理后的数据：{'file_path': 'test_report.txt', 'line_count': 3, 'word_count': 5, 'character_count': 40}",
       "successful_tools": [],
       "answer_contains_94_percent": false,
+      "report_tool_chain_complete": false,
       "edge_exact_match": null
     },
     {
@@ -62,6 +68,7 @@
       "answer": "请提供正确的文件路径以便进行后续操作。",
       "successful_tools": [],
       "answer_contains_94_percent": false,
+      "report_tool_chain_complete": false,
       "edge_exact_match": null
     },
     {
@@ -71,6 +78,7 @@
       "answer": "请提供正确的文件路径以便进行后续操作。",
       "successful_tools": [],
       "answer_contains_94_percent": false,
+      "report_tool_chain_complete": false,
       "edge_exact_match": null
     },
     {
@@ -80,6 +88,7 @@
       "answer": null,
       "successful_tools": [],
       "answer_contains_94_percent": false,
+      "report_tool_chain_complete": false,
       "edge_exact_match": false
     },
     {
@@ -89,14 +98,15 @@
       "answer": "右花括号 } 是普通字符。",
       "successful_tools": [],
       "answer_contains_94_percent": false,
+      "report_tool_chain_complete": false,
       "edge_exact_match": true
     }
   ],
   "prompt_pair": {
-    "original_file": "results/01_greedy_legacy.json",
+    "original_file": "results\\01_greedy_legacy.json",
     "original_status": "ok",
     "original_answer": "请提供正确的文件路径以便进行后续操作。",
-    "replacement_file": "results/06_prompt_explicit_path.json",
+    "replacement_file": "results\\06_prompt_explicit_path.json",
     "replacement_status": "ok",
     "replacement_answer": "经过处理后的数据：{'file_path': 'test_report.txt', 'line_count': 3, 'word_count': 5, 'character_count': 40}",
     "only_changed_config": [

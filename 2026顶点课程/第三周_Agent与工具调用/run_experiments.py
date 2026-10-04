@@ -1,5 +1,6 @@
 """在第一周环境中顺序运行十次真实推理，保存命令和未经修改的输出。"""
 import json
+import argparse
 import os
 from pathlib import Path
 import subprocess
@@ -25,8 +26,19 @@ RUNS = [
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--model', default='../第一周_LLM推理/models/Qwen2.5-1.5B-Instruct')
+    parser.add_argument('--quantization', choices=['none', 'nf4'], default='none')
+    parser.add_argument('--max-new-tokens', type=int, default=256)
+    parser.add_argument('--results-dir', default='results')
+    parser.add_argument('--logs-dir', default='logs')
+    args = parser.parse_args()
     os.chdir(ROOT)
-    Path('logs').mkdir(exist_ok=True)
+    logdir = Path(args.logs_dir)
+    logdir.mkdir(parents=True, exist_ok=True)
+    outputs = [Path(args.results_dir) / f'{name}.json' for name, *_ in RUNS]
+    if any(path.exists() for path in outputs) or (logdir / 'commands.json').exists():
+        raise FileExistsError('结果或命令清单已存在，请使用新的 --results-dir 和 --logs-dir')
     Path('workspace').mkdir(exist_ok=True)
     report = Path('workspace/test_report.txt')
     content = 'passed=47\nfailed=3\n'
@@ -35,21 +47,21 @@ def main():
     report.write_text(content, encoding='utf-8')
     manifest = []
     for name, task, mode, options in RUNS:
-        output = f'results/{name}.json'
+        output = str(Path(args.results_dir) / f'{name}.json')
         if Path(output).exists():
             raise FileExistsError(f'避免覆盖原始结果：{output}')
         argv = [sys.executable, '-X', 'utf8', 'agent_v0.py', '--backend', 'hf',
-                '--model', '../第一周_LLM推理/models/Qwen2.5-1.5B-Instruct', '--device', 'cuda',
-                '--task', task, '--max-steps', '6', '--max-failures', '2', '--max-new-tokens', '256',
+                '--model', args.model, '--device', 'cuda', '--quantization', args.quantization,
+                '--task', task, '--max-steps', '6', '--max-failures', '2', '--max-new-tokens', str(args.max_new_tokens),
                 '--workdir', 'workspace', '--seed', '42', '--json-stop', mode, '--output', output, *options]
         command = '& ' + ' '.join("'" + arg.replace("'", "''") + "'" for arg in argv)
         print(f'Running {name}', flush=True)
         result = subprocess.run(argv, capture_output=True, text=True, encoding='utf-8',
                                 env={**os.environ, 'PYTHONIOENCODING': 'utf-8'})
-        Path(f'logs/{name}.txt').write_text(command + '\n\nSTDOUT\n' + result.stdout +
+        (logdir / f'{name}.txt').write_text(command + '\n\nSTDOUT\n' + result.stdout +
                                          '\nSTDERR\n' + result.stderr, encoding='utf-8')
         manifest.append({'name': name, 'command': command, 'argv': argv, 'returncode': result.returncode})
-        Path('logs/commands.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding='utf-8')
+        (logdir / 'commands.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding='utf-8')
         if result.returncode:
             raise RuntimeError(f'{name} 运行失败，见日志')
         data = json.loads(Path(output).read_text(encoding='utf-8'))
