@@ -1,10 +1,10 @@
-# 第三周：Agent 与 Tool Calling
+# 第三周扩展实验复现说明
 
 ## 提交材料
 
 - [提交说明](提交说明.md)：1.5B 遇到的问题、换用 7B 的原因，以及两种模型的结果与分析。
 - [实验命令](实验命令.md)：全部 21 次实际执行命令及批量复现方式。
-- [作业要求](作业.md)；[课程课件](Minimal%20Agent与Tool%20Calling.pptx)。
+- [作业要求](assignment.md)；[课程课件](minimal-agent-and-tool-calling.pptx)。
 
 | 内容 | 位置 |
 | --- | --- |
@@ -23,8 +23,8 @@
 在本第三周目录运行。已有模型和第一周环境可以直接复用，无需 Ollama：
 
 ```powershell
-$week3Python = '../第一周_LLM推理/.venv/Scripts/python.exe'
-$week3Model = '../第一周_LLM推理/models/Qwen2.5-7B-Instruct'
+$week3Python = '../week01-llm-inference/.venv/Scripts/python.exe'
+$week3Model = '../week01-llm-inference/models/Qwen2.5-7B-Instruct'
 ```
 
 ## 只解压本提交包时准备环境
