@@ -1,0 +1,86 @@
+{
+  "created_at": "2026-10-14T12:11:02.242325+08:00",
+  "cases": [
+    {
+      "id": "01_vector_port",
+      "status": "ok",
+      "steps": 3,
+      "elapsed_s": 15.48,
+      "citation_repairs": 0,
+      "citations": [
+        "logging.md#1",
+        "troubleshooting.md#1"
+      ],
+      "tool_calls": [
+        "read_file",
+        "search_knowledge"
+      ],
+      "sha256": "40d206ff5f982bb056b759089b2c5f717e300b0e53fc1658243ac11437b4741f"
+    },
+    {
+      "id": "02_hybrid_port",
+      "status": "ok",
+      "steps": 3,
+      "elapsed_s": 18.198,
+      "citation_repairs": 0,
+      "citations": [
+        "configuration.md#1",
+        "logging.md#1",
+        "troubleshooting.md#1"
+      ],
+      "tool_calls": [
+        "read_file",
+        "search_knowledge"
+      ],
+      "sha256": "a0d2e179175e0a29c48aa56983d511c3f996311c873e02c66ef36222538dd126"
+    },
+    {
+      "id": "03_hybrid_onboarding",
+      "status": "citation_failed",
+      "steps": 4,
+      "elapsed_s": 20.056,
+      "citation_repairs": 1,
+      "citations": [
+        "configuration.md#1",
+        "logging.md#789",
+        "troubleshooting.md#1"
+      ],
+      "tool_calls": [
+        "read_file",
+        "search_knowledge"
+      ],
+      "sha256": "df4e8f743daebf6794ae7383f42f852ad09f41d8a295ab2a0e3a6d9167708a98"
+    },
+    {
+      "id": "04_hybrid_export",
+      "status": "ok",
+      "steps": 3,
+      "elapsed_s": 12.998,
+      "citation_repairs": 0,
+      "citations": [
+        "export.md#1",
+        "logging.md#1"
+      ],
+      "tool_calls": [
+        "read_file",
+        "search_knowledge"
+      ],
+      "sha256": "2e8eecbd960475b13b64d7e678b5d3f419aa36e17b5532eaa8c1967951026583"
+    },
+    {
+      "id": "05_hybrid_unknown",
+      "status": "ok",
+      "steps": 4,
+      "elapsed_s": 13.33,
+      "citation_repairs": 1,
+      "citations": [
+        "configuration.md#1"
+      ],
+      "tool_calls": [
+        "read_file",
+        "search_knowledge"
+      ],
+      "sha256": "934c51e190aae54438aa71996bad8bc19d35f55a8bfee64853e920f41dcbe2bb"
+    }
+  ]
+}

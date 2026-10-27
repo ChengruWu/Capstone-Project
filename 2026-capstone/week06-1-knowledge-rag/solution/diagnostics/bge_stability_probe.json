@@ -1,0 +1,47 @@
+{
+  "torch": "2.4.0+cu121",
+  "rows": [
+    {
+      "threads": 1,
+      "mkldnn": true,
+      "finite": true,
+      "max_abs_diff": 0.0,
+      "norm": 6.439383506774902
+    },
+    {
+      "threads": 1,
+      "mkldnn": false,
+      "finite": true,
+      "max_abs_diff": 0.0,
+      "norm": 6.439383506774902
+    },
+    {
+      "threads": 2,
+      "mkldnn": true,
+      "finite": true,
+      "max_abs_diff": 0.39958998560905457,
+      "norm": 5.405996799468994
+    },
+    {
+      "threads": 2,
+      "mkldnn": false,
+      "finite": true,
+      "max_abs_diff": 2.1660609245300293,
+      "norm": 14.104729652404785
+    },
+    {
+      "threads": 4,
+      "mkldnn": true,
+      "finite": true,
+      "max_abs_diff": 0.5578226447105408,
+      "norm": 6.019136905670166
+    },
+    {
+      "threads": 4,
+      "mkldnn": false,
+      "finite": true,
+      "max_abs_diff": 3.9095916748046875,
+      "norm": 5.040771961212158
+    }
+  ]
+}

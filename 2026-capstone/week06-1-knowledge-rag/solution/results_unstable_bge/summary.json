@@ -1,0 +1,88 @@
+{
+  "created_at": "2026-10-14T11:48:32.486197+08:00",
+  "cases": [
+    {
+      "id": "01_vector_port",
+      "status": "ok",
+      "steps": 3,
+      "elapsed_s": 21.982,
+      "citation_repairs": 0,
+      "citations": [
+        "configuration.md#1",
+        "export.md#1",
+        "sample_data.md#1"
+      ],
+      "tool_calls": [
+        "read_file",
+        "search_knowledge"
+      ],
+      "sha256": "b649b79e04217f61f85998f72a7fe4edbf39ce8f94519f0d01a0fb6e50298a60"
+    },
+    {
+      "id": "02_hybrid_port",
+      "status": "ok",
+      "steps": 3,
+      "elapsed_s": 14.173,
+      "citation_repairs": 0,
+      "citations": [
+        "configuration.md#1",
+        "logging.md#1",
+        "troubleshooting.md#1"
+      ],
+      "tool_calls": [
+        "read_file",
+        "search_knowledge"
+      ],
+      "sha256": "fd8b34df69a740606df74b14a4d2669ab11694c5e6634959180ea205f77fabcb"
+    },
+    {
+      "id": "03_hybrid_onboarding",
+      "status": "ok",
+      "steps": 4,
+      "elapsed_s": 24.38,
+      "citation_repairs": 1,
+      "citations": [
+        "logging.md#1",
+        "startup.md#1",
+        "troubleshooting.md#1"
+      ],
+      "tool_calls": [
+        "read_file",
+        "search_knowledge"
+      ],
+      "sha256": "5d2b340c553d408d4861197fe476fc35774a218ca0fedc4e61176a22f46e9a5c"
+    },
+    {
+      "id": "04_hybrid_export",
+      "status": "citation_failed",
+      "steps": 3,
+      "elapsed_s": 9.275,
+      "citation_repairs": 1,
+      "citations": [
+        "export_task.txt#1"
+      ],
+      "tool_calls": [
+        "read_file"
+      ],
+      "sha256": "489328d20ddbcc4dfc2f353f0239c7e257df2686cb1510e9e95fc34c347c50d6"
+    },
+    {
+      "id": "05_hybrid_unknown",
+      "status": "citation_failed",
+      "steps": 4,
+      "elapsed_s": 11.617,
+      "citation_repairs": 1,
+      "citations": [
+        "export.md#1",
+        "logging.md#1",
+        "sample_data.md#1",
+        "unknown_task.txt#1"
+      ],
+      "tool_calls": [
+        "read_file",
+        "search_knowledge"
+      ],
+      "sha256": "6b06d7d3872a17e448d98280253a1b6200302f1422276f909adc4e5e445beaed"
+    }
+  ]
+}

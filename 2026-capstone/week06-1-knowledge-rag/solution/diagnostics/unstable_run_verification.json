@@ -1,0 +1,1324 @@
+{
+  "created_at": "2026-10-14T12:08:00.394191+08:00",
+  "passed": false,
+  "check_count": 306,
+  "checks": [
+    {
+      "name": "source manifest complete",
+      "passed": false
+    },
+    {
+      "name": "knowledge manifest complete",
+      "passed": true
+    },
+    {
+      "name": "source hash: agent_v1.py",
+      "passed": false
+    },
+    {
+      "name": "source hash: rag_components.py",
+      "passed": false
+    },
+    {
+      "name": "source hash: run_experiments.py",
+      "passed": false
+    },
+    {
+      "name": "source hash: test_agent.py",
+      "passed": true
+    },
+    {
+      "name": "source hash: test_components.py",
+      "passed": true
+    },
+    {
+      "name": "knowledge hash: configuration.md",
+      "passed": true
+    },
+    {
+      "name": "knowledge hash: export.md",
+      "passed": true
+    },
+    {
+      "name": "knowledge hash: logging.md",
+      "passed": true
+    },
+    {
+      "name": "knowledge hash: sample_data.md",
+      "passed": true
+    },
+    {
+      "name": "knowledge hash: startup.md",
+      "passed": true
+    },
+    {
+      "name": "knowledge hash: troubleshooting.md",
+      "passed": true
+    },
+    {
+      "name": "memory snapshot matches persisted file",
+      "passed": true
+    },
+    {
+      "name": "agent case IDs complete and unique",
+      "passed": true
+    },
+    {
+      "name": "01_vector_port: result file exists",
+      "passed": true
+    },
+    {
+      "name": "01_vector_port: file hash",
+      "passed": true
+    },
+    {
+      "name": "01_vector_port: fixed task and configuration",
+      "passed": true
+    },
+    {
+      "name": "01_vector_port: trace step sequence",
+      "passed": true
+    },
+    {
+      "name": "01_vector_port: raw matches messages",
+      "passed": true
+    },
+    {
+      "name": "01_vector_port: step 3 citation validation replay",
+      "passed": true
+    },
+    {
+      "name": "01_vector_port: evidence from successful search only",
+      "passed": true
+    },
+    {
+      "name": "01_vector_port: retrieved chunks match original knowledge",
+      "passed": true
+    },
+    {
+      "name": "01_vector_port: tool observations match messages",
+      "passed": true
+    },
+    {
+      "name": "01_vector_port: answer candidates preserve raw and validation",
+      "passed": true
+    },
+    {
+      "name": "01_vector_port: persisted memory loaded",
+      "passed": true
+    },
+    {
+      "name": "01_vector_port: summary id",
+      "passed": true
+    },
+    {
+      "name": "01_vector_port: summary status",
+      "passed": true
+    },
+    {
+      "name": "01_vector_port: summary steps",
+      "passed": true
+    },
+    {
+      "name": "01_vector_port: summary elapsed_s",
+      "passed": true
+    },
+    {
+      "name": "01_vector_port: summary citation_repairs",
+      "passed": true
+    },
+    {
+      "name": "01_vector_port: summary citations",
+      "passed": true
+    },
+    {
+      "name": "01_vector_port: summary tool_calls",
+      "passed": true
+    },
+    {
+      "name": "01_vector_port: at most one citation repair",
+      "passed": true
+    },
+    {
+      "name": "01_vector_port: repair count matches feedback",
+      "passed": true
+    },
+    {
+      "name": "01_vector_port: generation metadata present",
+      "passed": true
+    },
+    {
+      "name": "01_vector_port: generation not truncated",
+      "passed": true
+    },
+    {
+      "name": "01_vector_port: replay citation validation",
+      "passed": true
+    },
+    {
+      "name": "01_vector_port: ok requires citations",
+      "passed": true
+    },
+    {
+      "name": "02_hybrid_port: result file exists",
+      "passed": true
+    },
+    {
+      "name": "02_hybrid_port: file hash",
+      "passed": true
+    },
+    {
+      "name": "02_hybrid_port: fixed task and configuration",
+      "passed": true
+    },
+    {
+      "name": "02_hybrid_port: trace step sequence",
+      "passed": true
+    },
+    {
+      "name": "02_hybrid_port: raw matches messages",
+      "passed": true
+    },
+    {
+      "name": "02_hybrid_port: step 3 citation validation replay",
+      "passed": true
+    },
+    {
+      "name": "02_hybrid_port: evidence from successful search only",
+      "passed": true
+    },
+    {
+      "name": "02_hybrid_port: retrieved chunks match original knowledge",
+      "passed": true
+    },
+    {
+      "name": "02_hybrid_port: tool observations match messages",
+      "passed": true
+    },
+    {
+      "name": "02_hybrid_port: answer candidates preserve raw and validation",
+      "passed": true
+    },
+    {
+      "name": "02_hybrid_port: persisted memory loaded",
+      "passed": true
+    },
+    {
+      "name": "02_hybrid_port: summary id",
+      "passed": true
+    },
+    {
+      "name": "02_hybrid_port: summary status",
+      "passed": true
+    },
+    {
+      "name": "02_hybrid_port: summary steps",
+      "passed": true
+    },
+    {
+      "name": "02_hybrid_port: summary elapsed_s",
+      "passed": true
+    },
+    {
+      "name": "02_hybrid_port: summary citation_repairs",
+      "passed": true
+    },
+    {
+      "name": "02_hybrid_port: summary citations",
+      "passed": true
+    },
+    {
+      "name": "02_hybrid_port: summary tool_calls",
+      "passed": true
+    },
+    {
+      "name": "02_hybrid_port: at most one citation repair",
+      "passed": true
+    },
+    {
+      "name": "02_hybrid_port: repair count matches feedback",
+      "passed": true
+    },
+    {
+      "name": "02_hybrid_port: generation metadata present",
+      "passed": true
+    },
+    {
+      "name": "02_hybrid_port: generation not truncated",
+      "passed": true
+    },
+    {
+      "name": "02_hybrid_port: replay citation validation",
+      "passed": true
+    },
+    {
+      "name": "02_hybrid_port: ok requires citations",
+      "passed": true
+    },
+    {
+      "name": "03_hybrid_onboarding: result file exists",
+      "passed": true
+    },
+    {
+      "name": "03_hybrid_onboarding: file hash",
+      "passed": true
+    },
+    {
+      "name": "03_hybrid_onboarding: fixed task and configuration",
+      "passed": true
+    },
+    {
+      "name": "03_hybrid_onboarding: trace step sequence",
+      "passed": true
+    },
+    {
+      "name": "03_hybrid_onboarding: raw matches messages",
+      "passed": true
+    },
+    {
+      "name": "03_hybrid_onboarding: step 2 citation validation replay",
+      "passed": true
+    },
+    {
+      "name": "03_hybrid_onboarding: step 4 citation validation replay",
+      "passed": true
+    },
+    {
+      "name": "03_hybrid_onboarding: evidence from successful search only",
+      "passed": true
+    },
+    {
+      "name": "03_hybrid_onboarding: retrieved chunks match original knowledge",
+      "passed": true
+    },
+    {
+      "name": "03_hybrid_onboarding: tool observations match messages",
+      "passed": true
+    },
+    {
+      "name": "03_hybrid_onboarding: answer candidates preserve raw and validation",
+      "passed": true
+    },
+    {
+      "name": "03_hybrid_onboarding: persisted memory loaded",
+      "passed": true
+    },
+    {
+      "name": "03_hybrid_onboarding: summary id",
+      "passed": true
+    },
+    {
+      "name": "03_hybrid_onboarding: summary status",
+      "passed": true
+    },
+    {
+      "name": "03_hybrid_onboarding: summary steps",
+      "passed": true
+    },
+    {
+      "name": "03_hybrid_onboarding: summary elapsed_s",
+      "passed": true
+    },
+    {
+      "name": "03_hybrid_onboarding: summary citation_repairs",
+      "passed": true
+    },
+    {
+      "name": "03_hybrid_onboarding: summary citations",
+      "passed": true
+    },
+    {
+      "name": "03_hybrid_onboarding: summary tool_calls",
+      "passed": true
+    },
+    {
+      "name": "03_hybrid_onboarding: at most one citation repair",
+      "passed": true
+    },
+    {
+      "name": "03_hybrid_onboarding: repair count matches feedback",
+      "passed": true
+    },
+    {
+      "name": "03_hybrid_onboarding: generation metadata present",
+      "passed": true
+    },
+    {
+      "name": "03_hybrid_onboarding: generation not truncated",
+      "passed": true
+    },
+    {
+      "name": "03_hybrid_onboarding: replay citation validation",
+      "passed": true
+    },
+    {
+      "name": "03_hybrid_onboarding: ok requires citations",
+      "passed": true
+    },
+    {
+      "name": "04_hybrid_export: result file exists",
+      "passed": true
+    },
+    {
+      "name": "04_hybrid_export: file hash",
+      "passed": true
+    },
+    {
+      "name": "04_hybrid_export: fixed task and configuration",
+      "passed": true
+    },
+    {
+      "name": "04_hybrid_export: trace step sequence",
+      "passed": true
+    },
+    {
+      "name": "04_hybrid_export: raw matches messages",
+      "passed": true
+    },
+    {
+      "name": "04_hybrid_export: step 2 citation validation replay",
+      "passed": true
+    },
+    {
+      "name": "04_hybrid_export: step 3 citation validation replay",
+      "passed": true
+    },
+    {
+      "name": "04_hybrid_export: evidence from successful search only",
+      "passed": true
+    },
+    {
+      "name": "04_hybrid_export: retrieved chunks match original knowledge",
+      "passed": true
+    },
+    {
+      "name": "04_hybrid_export: tool observations match messages",
+      "passed": true
+    },
+    {
+      "name": "04_hybrid_export: answer candidates preserve raw and validation",
+      "passed": true
+    },
+    {
+      "name": "04_hybrid_export: persisted memory loaded",
+      "passed": true
+    },
+    {
+      "name": "04_hybrid_export: summary id",
+      "passed": true
+    },
+    {
+      "name": "04_hybrid_export: summary status",
+      "passed": true
+    },
+    {
+      "name": "04_hybrid_export: summary steps",
+      "passed": true
+    },
+    {
+      "name": "04_hybrid_export: summary elapsed_s",
+      "passed": true
+    },
+    {
+      "name": "04_hybrid_export: summary citation_repairs",
+      "passed": true
+    },
+    {
+      "name": "04_hybrid_export: summary citations",
+      "passed": true
+    },
+    {
+      "name": "04_hybrid_export: summary tool_calls",
+      "passed": true
+    },
+    {
+      "name": "04_hybrid_export: at most one citation repair",
+      "passed": true
+    },
+    {
+      "name": "04_hybrid_export: repair count matches feedback",
+      "passed": true
+    },
+    {
+      "name": "04_hybrid_export: generation metadata present",
+      "passed": true
+    },
+    {
+      "name": "04_hybrid_export: generation not truncated",
+      "passed": true
+    },
+    {
+      "name": "04_hybrid_export: replay citation validation",
+      "passed": true
+    },
+    {
+      "name": "05_hybrid_unknown: result file exists",
+      "passed": true
+    },
+    {
+      "name": "05_hybrid_unknown: file hash",
+      "passed": true
+    },
+    {
+      "name": "05_hybrid_unknown: fixed task and configuration",
+      "passed": true
+    },
+    {
+      "name": "05_hybrid_unknown: trace step sequence",
+      "passed": true
+    },
+    {
+      "name": "05_hybrid_unknown: raw matches messages",
+      "passed": true
+    },
+    {
+      "name": "05_hybrid_unknown: step 2 citation validation replay",
+      "passed": true
+    },
+    {
+      "name": "05_hybrid_unknown: step 4 citation validation replay",
+      "passed": true
+    },
+    {
+      "name": "05_hybrid_unknown: evidence from successful search only",
+      "passed": true
+    },
+    {
+      "name": "05_hybrid_unknown: retrieved chunks match original knowledge",
+      "passed": true
+    },
+    {
+      "name": "05_hybrid_unknown: tool observations match messages",
+      "passed": true
+    },
+    {
+      "name": "05_hybrid_unknown: answer candidates preserve raw and validation",
+      "passed": true
+    },
+    {
+      "name": "05_hybrid_unknown: persisted memory loaded",
+      "passed": true
+    },
+    {
+      "name": "05_hybrid_unknown: summary id",
+      "passed": true
+    },
+    {
+      "name": "05_hybrid_unknown: summary status",
+      "passed": true
+    },
+    {
+      "name": "05_hybrid_unknown: summary steps",
+      "passed": true
+    },
+    {
+      "name": "05_hybrid_unknown: summary elapsed_s",
+      "passed": true
+    },
+    {
+      "name": "05_hybrid_unknown: summary citation_repairs",
+      "passed": true
+    },
+    {
+      "name": "05_hybrid_unknown: summary citations",
+      "passed": true
+    },
+    {
+      "name": "05_hybrid_unknown: summary tool_calls",
+      "passed": true
+    },
+    {
+      "name": "05_hybrid_unknown: at most one citation repair",
+      "passed": true
+    },
+    {
+      "name": "05_hybrid_unknown: repair count matches feedback",
+      "passed": true
+    },
+    {
+      "name": "05_hybrid_unknown: generation metadata present",
+      "passed": true
+    },
+    {
+      "name": "05_hybrid_unknown: generation not truncated",
+      "passed": true
+    },
+    {
+      "name": "05_hybrid_unknown: replay citation validation",
+      "passed": true
+    },
+    {
+      "name": "retrieval top_k is three",
+      "passed": true
+    },
+    {
+      "name": "retrieval modes are vector and hybrid",
+      "passed": true
+    },
+    {
+      "name": "vector: retrieval case IDs complete and unique",
+      "passed": true
+    },
+    {
+      "name": "vector: metric sample count",
+      "passed": true
+    },
+    {
+      "name": "vector/port: fixed query and relevance labels",
+      "passed": true
+    },
+    {
+      "name": "vector/port: top_k distinct hits",
+      "passed": true
+    },
+    {
+      "name": "vector/port: rank sequence",
+      "passed": true
+    },
+    {
+      "name": "vector/port: hit chunks match original knowledge",
+      "passed": true
+    },
+    {
+      "name": "vector/port: finite retrieval scores",
+      "passed": true
+    },
+    {
+      "name": "vector/port: scores in descending order",
+      "passed": true
+    },
+    {
+      "name": "vector/port: hit@1 recomputed from hits",
+      "passed": true
+    },
+    {
+      "name": "vector/port: recall@3 recomputed from hits",
+      "passed": true
+    },
+    {
+      "name": "vector/startup: fixed query and relevance labels",
+      "passed": true
+    },
+    {
+      "name": "vector/startup: top_k distinct hits",
+      "passed": true
+    },
+    {
+      "name": "vector/startup: rank sequence",
+      "passed": true
+    },
+    {
+      "name": "vector/startup: hit chunks match original knowledge",
+      "passed": true
+    },
+    {
+      "name": "vector/startup: finite retrieval scores",
+      "passed": true
+    },
+    {
+      "name": "vector/startup: scores in descending order",
+      "passed": true
+    },
+    {
+      "name": "vector/startup: hit@1 recomputed from hits",
+      "passed": true
+    },
+    {
+      "name": "vector/startup: recall@3 recomputed from hits",
+      "passed": true
+    },
+    {
+      "name": "vector/logs: fixed query and relevance labels",
+      "passed": true
+    },
+    {
+      "name": "vector/logs: top_k distinct hits",
+      "passed": true
+    },
+    {
+      "name": "vector/logs: rank sequence",
+      "passed": true
+    },
+    {
+      "name": "vector/logs: hit chunks match original knowledge",
+      "passed": true
+    },
+    {
+      "name": "vector/logs: finite retrieval scores",
+      "passed": true
+    },
+    {
+      "name": "vector/logs: scores in descending order",
+      "passed": true
+    },
+    {
+      "name": "vector/logs: hit@1 recomputed from hits",
+      "passed": true
+    },
+    {
+      "name": "vector/logs: recall@3 recomputed from hits",
+      "passed": true
+    },
+    {
+      "name": "vector/export: fixed query and relevance labels",
+      "passed": true
+    },
+    {
+      "name": "vector/export: top_k distinct hits",
+      "passed": true
+    },
+    {
+      "name": "vector/export: rank sequence",
+      "passed": true
+    },
+    {
+      "name": "vector/export: hit chunks match original knowledge",
+      "passed": true
+    },
+    {
+      "name": "vector/export: finite retrieval scores",
+      "passed": true
+    },
+    {
+      "name": "vector/export: scores in descending order",
+      "passed": true
+    },
+    {
+      "name": "vector/export: hit@1 recomputed from hits",
+      "passed": true
+    },
+    {
+      "name": "vector/export: recall@3 recomputed from hits",
+      "passed": true
+    },
+    {
+      "name": "vector/sample: fixed query and relevance labels",
+      "passed": true
+    },
+    {
+      "name": "vector/sample: top_k distinct hits",
+      "passed": true
+    },
+    {
+      "name": "vector/sample: rank sequence",
+      "passed": true
+    },
+    {
+      "name": "vector/sample: hit chunks match original knowledge",
+      "passed": true
+    },
+    {
+      "name": "vector/sample: finite retrieval scores",
+      "passed": true
+    },
+    {
+      "name": "vector/sample: scores in descending order",
+      "passed": true
+    },
+    {
+      "name": "vector/sample: hit@1 recomputed from hits",
+      "passed": true
+    },
+    {
+      "name": "vector/sample: recall@3 recomputed from hits",
+      "passed": true
+    },
+    {
+      "name": "vector/config: fixed query and relevance labels",
+      "passed": true
+    },
+    {
+      "name": "vector/config: top_k distinct hits",
+      "passed": true
+    },
+    {
+      "name": "vector/config: rank sequence",
+      "passed": true
+    },
+    {
+      "name": "vector/config: hit chunks match original knowledge",
+      "passed": true
+    },
+    {
+      "name": "vector/config: finite retrieval scores",
+      "passed": true
+    },
+    {
+      "name": "vector/config: scores in descending order",
+      "passed": true
+    },
+    {
+      "name": "vector/config: hit@1 recomputed from hits",
+      "passed": true
+    },
+    {
+      "name": "vector/config: recall@3 recomputed from hits",
+      "passed": true
+    },
+    {
+      "name": "vector/backup: fixed query and relevance labels",
+      "passed": true
+    },
+    {
+      "name": "vector/backup: top_k distinct hits",
+      "passed": true
+    },
+    {
+      "name": "vector/backup: rank sequence",
+      "passed": true
+    },
+    {
+      "name": "vector/backup: hit chunks match original knowledge",
+      "passed": true
+    },
+    {
+      "name": "vector/backup: finite retrieval scores",
+      "passed": true
+    },
+    {
+      "name": "vector/backup: scores in descending order",
+      "passed": true
+    },
+    {
+      "name": "vector/backup: hit@1 recomputed from hits",
+      "passed": true
+    },
+    {
+      "name": "vector/backup: recall@3 recomputed from hits",
+      "passed": true
+    },
+    {
+      "name": "vector/privacy: fixed query and relevance labels",
+      "passed": true
+    },
+    {
+      "name": "vector/privacy: top_k distinct hits",
+      "passed": true
+    },
+    {
+      "name": "vector/privacy: rank sequence",
+      "passed": true
+    },
+    {
+      "name": "vector/privacy: hit chunks match original knowledge",
+      "passed": true
+    },
+    {
+      "name": "vector/privacy: finite retrieval scores",
+      "passed": true
+    },
+    {
+      "name": "vector/privacy: scores in descending order",
+      "passed": true
+    },
+    {
+      "name": "vector/privacy: hit@1 recomputed from hits",
+      "passed": true
+    },
+    {
+      "name": "vector/privacy: recall@3 recomputed from hits",
+      "passed": true
+    },
+    {
+      "name": "vector: hit@1 aggregation",
+      "passed": true
+    },
+    {
+      "name": "vector: recall@3 aggregation",
+      "passed": true
+    },
+    {
+      "name": "hybrid: retrieval case IDs complete and unique",
+      "passed": true
+    },
+    {
+      "name": "hybrid: metric sample count",
+      "passed": true
+    },
+    {
+      "name": "hybrid/port: fixed query and relevance labels",
+      "passed": true
+    },
+    {
+      "name": "hybrid/port: top_k distinct hits",
+      "passed": true
+    },
+    {
+      "name": "hybrid/port: rank sequence",
+      "passed": true
+    },
+    {
+      "name": "hybrid/port: hit chunks match original knowledge",
+      "passed": true
+    },
+    {
+      "name": "hybrid/port: finite retrieval scores",
+      "passed": true
+    },
+    {
+      "name": "hybrid/port: scores in descending order",
+      "passed": true
+    },
+    {
+      "name": "hybrid/port: hit@1 recomputed from hits",
+      "passed": true
+    },
+    {
+      "name": "hybrid/port: recall@3 recomputed from hits",
+      "passed": true
+    },
+    {
+      "name": "hybrid/startup: fixed query and relevance labels",
+      "passed": true
+    },
+    {
+      "name": "hybrid/startup: top_k distinct hits",
+      "passed": true
+    },
+    {
+      "name": "hybrid/startup: rank sequence",
+      "passed": true
+    },
+    {
+      "name": "hybrid/startup: hit chunks match original knowledge",
+      "passed": true
+    },
+    {
+      "name": "hybrid/startup: finite retrieval scores",
+      "passed": true
+    },
+    {
+      "name": "hybrid/startup: scores in descending order",
+      "passed": true
+    },
+    {
+      "name": "hybrid/startup: hit@1 recomputed from hits",
+      "passed": true
+    },
+    {
+      "name": "hybrid/startup: recall@3 recomputed from hits",
+      "passed": true
+    },
+    {
+      "name": "hybrid/logs: fixed query and relevance labels",
+      "passed": true
+    },
+    {
+      "name": "hybrid/logs: top_k distinct hits",
+      "passed": true
+    },
+    {
+      "name": "hybrid/logs: rank sequence",
+      "passed": true
+    },
+    {
+      "name": "hybrid/logs: hit chunks match original knowledge",
+      "passed": true
+    },
+    {
+      "name": "hybrid/logs: finite retrieval scores",
+      "passed": true
+    },
+    {
+      "name": "hybrid/logs: scores in descending order",
+      "passed": true
+    },
+    {
+      "name": "hybrid/logs: hit@1 recomputed from hits",
+      "passed": true
+    },
+    {
+      "name": "hybrid/logs: recall@3 recomputed from hits",
+      "passed": true
+    },
+    {
+      "name": "hybrid/export: fixed query and relevance labels",
+      "passed": true
+    },
+    {
+      "name": "hybrid/export: top_k distinct hits",
+      "passed": true
+    },
+    {
+      "name": "hybrid/export: rank sequence",
+      "passed": true
+    },
+    {
+      "name": "hybrid/export: hit chunks match original knowledge",
+      "passed": true
+    },
+    {
+      "name": "hybrid/export: finite retrieval scores",
+      "passed": true
+    },
+    {
+      "name": "hybrid/export: scores in descending order",
+      "passed": true
+    },
+    {
+      "name": "hybrid/export: hit@1 recomputed from hits",
+      "passed": true
+    },
+    {
+      "name": "hybrid/export: recall@3 recomputed from hits",
+      "passed": true
+    },
+    {
+      "name": "hybrid/sample: fixed query and relevance labels",
+      "passed": true
+    },
+    {
+      "name": "hybrid/sample: top_k distinct hits",
+      "passed": true
+    },
+    {
+      "name": "hybrid/sample: rank sequence",
+      "passed": true
+    },
+    {
+      "name": "hybrid/sample: hit chunks match original knowledge",
+      "passed": true
+    },
+    {
+      "name": "hybrid/sample: finite retrieval scores",
+      "passed": true
+    },
+    {
+      "name": "hybrid/sample: scores in descending order",
+      "passed": true
+    },
+    {
+      "name": "hybrid/sample: hit@1 recomputed from hits",
+      "passed": true
+    },
+    {
+      "name": "hybrid/sample: recall@3 recomputed from hits",
+      "passed": true
+    },
+    {
+      "name": "hybrid/config: fixed query and relevance labels",
+      "passed": true
+    },
+    {
+      "name": "hybrid/config: top_k distinct hits",
+      "passed": true
+    },
+    {
+      "name": "hybrid/config: rank sequence",
+      "passed": true
+    },
+    {
+      "name": "hybrid/config: hit chunks match original knowledge",
+      "passed": true
+    },
+    {
+      "name": "hybrid/config: finite retrieval scores",
+      "passed": true
+    },
+    {
+      "name": "hybrid/config: scores in descending order",
+      "passed": true
+    },
+    {
+      "name": "hybrid/config: hit@1 recomputed from hits",
+      "passed": true
+    },
+    {
+      "name": "hybrid/config: recall@3 recomputed from hits",
+      "passed": true
+    },
+    {
+      "name": "hybrid/backup: fixed query and relevance labels",
+      "passed": true
+    },
+    {
+      "name": "hybrid/backup: top_k distinct hits",
+      "passed": true
+    },
+    {
+      "name": "hybrid/backup: rank sequence",
+      "passed": true
+    },
+    {
+      "name": "hybrid/backup: hit chunks match original knowledge",
+      "passed": true
+    },
+    {
+      "name": "hybrid/backup: finite retrieval scores",
+      "passed": true
+    },
+    {
+      "name": "hybrid/backup: scores in descending order",
+      "passed": true
+    },
+    {
+      "name": "hybrid/backup: hit@1 recomputed from hits",
+      "passed": true
+    },
+    {
+      "name": "hybrid/backup: recall@3 recomputed from hits",
+      "passed": true
+    },
+    {
+      "name": "hybrid/privacy: fixed query and relevance labels",
+      "passed": true
+    },
+    {
+      "name": "hybrid/privacy: top_k distinct hits",
+      "passed": true
+    },
+    {
+      "name": "hybrid/privacy: rank sequence",
+      "passed": true
+    },
+    {
+      "name": "hybrid/privacy: hit chunks match original knowledge",
+      "passed": true
+    },
+    {
+      "name": "hybrid/privacy: finite retrieval scores",
+      "passed": true
+    },
+    {
+      "name": "hybrid/privacy: scores in descending order",
+      "passed": true
+    },
+    {
+      "name": "hybrid/privacy: hit@1 recomputed from hits",
+      "passed": true
+    },
+    {
+      "name": "hybrid/privacy: recall@3 recomputed from hits",
+      "passed": true
+    },
+    {
+      "name": "hybrid: hit@1 aggregation",
+      "passed": true
+    },
+    {
+      "name": "hybrid: recall@3 aggregation",
+      "passed": true
+    },
+    {
+      "name": "port: exactly one record per retrieval mode",
+      "passed": true
+    },
+    {
+      "name": "port: paired query and labels match",
+      "passed": true
+    },
+    {
+      "name": "port: common recalled fragments nonempty",
+      "passed": true
+    },
+    {
+      "name": "port: common recalled fragment vector scores stable",
+      "passed": false
+    },
+    {
+      "name": "startup: exactly one record per retrieval mode",
+      "passed": true
+    },
+    {
+      "name": "startup: paired query and labels match",
+      "passed": true
+    },
+    {
+      "name": "startup: common recalled fragments nonempty",
+      "passed": true
+    },
+    {
+      "name": "startup: common recalled fragment vector scores stable",
+      "passed": false
+    },
+    {
+      "name": "logs: exactly one record per retrieval mode",
+      "passed": true
+    },
+    {
+      "name": "logs: paired query and labels match",
+      "passed": true
+    },
+    {
+      "name": "logs: common recalled fragments nonempty",
+      "passed": true
+    },
+    {
+      "name": "logs: common recalled fragment vector scores stable",
+      "passed": false
+    },
+    {
+      "name": "export: exactly one record per retrieval mode",
+      "passed": true
+    },
+    {
+      "name": "export: paired query and labels match",
+      "passed": true
+    },
+    {
+      "name": "export: common recalled fragments nonempty",
+      "passed": true
+    },
+    {
+      "name": "export: common recalled fragment vector scores stable",
+      "passed": false
+    },
+    {
+      "name": "sample: exactly one record per retrieval mode",
+      "passed": true
+    },
+    {
+      "name": "sample: paired query and labels match",
+      "passed": true
+    },
+    {
+      "name": "sample: common recalled fragments nonempty",
+      "passed": true
+    },
+    {
+      "name": "sample: common recalled fragment vector scores stable",
+      "passed": false
+    },
+    {
+      "name": "config: exactly one record per retrieval mode",
+      "passed": true
+    },
+    {
+      "name": "config: paired query and labels match",
+      "passed": true
+    },
+    {
+      "name": "config: common recalled fragments nonempty",
+      "passed": true
+    },
+    {
+      "name": "config: common recalled fragment vector scores stable",
+      "passed": false
+    },
+    {
+      "name": "backup: exactly one record per retrieval mode",
+      "passed": true
+    },
+    {
+      "name": "backup: paired query and labels match",
+      "passed": true
+    },
+    {
+      "name": "backup: common recalled fragments nonempty",
+      "passed": true
+    },
+    {
+      "name": "backup: common recalled fragment vector scores stable",
+      "passed": false
+    },
+    {
+      "name": "privacy: exactly one record per retrieval mode",
+      "passed": true
+    },
+    {
+      "name": "privacy: paired query and labels match",
+      "passed": true
+    },
+    {
+      "name": "privacy: common recalled fragments nonempty",
+      "passed": true
+    },
+    {
+      "name": "privacy: common recalled fragment vector scores stable",
+      "passed": false
+    }
+  ],
+  "outcomes": [
+    {
+      "id": "01_vector_port",
+      "status": "ok",
+      "citation_repairs": 0
+    },
+    {
+      "id": "02_hybrid_port",
+      "status": "ok",
+      "citation_repairs": 0
+    },
+    {
+      "id": "03_hybrid_onboarding",
+      "status": "ok",
+      "citation_repairs": 1
+    },
+    {
+      "id": "04_hybrid_export",
+      "status": "citation_failed",
+      "citation_repairs": 1
+    },
+    {
+      "id": "05_hybrid_unknown",
+      "status": "citation_failed",
+      "citation_repairs": 1
+    }
+  ],
+  "stability": [
+    {
+      "id": "port",
+      "common_fragment_ids": [
+        "configuration.md#1",
+        "troubleshooting.md#1"
+      ],
+      "stable": false
+    },
+    {
+      "id": "startup",
+      "common_fragment_ids": [
+        "export.md#1"
+      ],
+      "stable": false
+    },
+    {
+      "id": "logs",
+      "common_fragment_ids": [
+        "configuration.md#1",
+        "export.md#1"
+      ],
+      "stable": false
+    },
+    {
+      "id": "export",
+      "common_fragment_ids": [
+        "export.md#1",
+        "logging.md#1"
+      ],
+      "stable": false
+    },
+    {
+      "id": "sample",
+      "common_fragment_ids": [
+        "sample_data.md#1"
+      ],
+      "stable": false
+    },
+    {
+      "id": "config",
+      "common_fragment_ids": [
+        "configuration.md#1",
+        "logging.md#1",
+        "sample_data.md#1"
+      ],
+      "stable": false
+    },
+    {
+      "id": "backup",
+      "common_fragment_ids": [
+        "export.md#1",
+        "sample_data.md#1"
+      ],
+      "stable": false
+    },
+    {
+      "id": "privacy",
+      "common_fragment_ids": [
+        "logging.md#1",
+        "troubleshooting.md#1"
+      ],
+      "stable": false
+    }
+  ],
+  "scope": "固定案例完整性、原始知识片段、来源编号、summary字段、逐题及总体指标、共同召回片段向量分数；不代表答案语义或任务成功率"
+}

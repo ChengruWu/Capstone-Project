@@ -1,0 +1,122 @@
+{
+  "purpose": "Diagnose BGE nonfinite CPU embeddings and verify eager attention workaround",
+  "versions": {
+    "python": "3.12.1",
+    "platform": "Windows-11-10.0.22631-SP0",
+    "torch": "2.4.0+cu121",
+    "transformers": "4.51.3"
+  },
+  "model": "BAAI/bge-small-zh-v1.5",
+  "local_files_only": true,
+  "device": "cpu",
+  "threads": 4,
+  "inputs": [
+    "cache_dir startup error",
+    "API_KEY"
+  ],
+  "input_ids": [
+    [
+      101,
+      10991,
+      142,
+      9796,
+      8180,
+      10906,
+      8838,
+      10812,
+      102
+    ],
+    [
+      101,
+      100,
+      142,
+      100,
+      102,
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "cases": [
+    {
+      "name": "default",
+      "attention_implementation": "sdpa",
+      "mkldnn_enabled": true,
+      "parameter_count": 23953920,
+      "nonfinite_parameter_count": 0,
+      "parameter_max_abs": 6.109375,
+      "output_shape": [
+        2,
+        9,
+        512
+      ],
+      "output_nonfinite_count": 9216,
+      "output_finite_count": 0,
+      "output_finite_max_abs": null
+    },
+    {
+      "name": "eager",
+      "attention_implementation": "eager",
+      "mkldnn_enabled": true,
+      "parameter_count": 23953920,
+      "nonfinite_parameter_count": 0,
+      "parameter_max_abs": 6.109375,
+      "output_shape": [
+        2,
+        9,
+        512
+      ],
+      "output_nonfinite_count": 0,
+      "output_finite_count": 9216,
+      "output_finite_max_abs": 5.471292018890381
+    },
+    {
+      "name": "default_no_mkldnn",
+      "attention_implementation": "sdpa",
+      "mkldnn_enabled": false,
+      "parameter_count": 23953920,
+      "nonfinite_parameter_count": 0,
+      "parameter_max_abs": 6.109375,
+      "output_shape": [
+        2,
+        9,
+        512
+      ],
+      "output_nonfinite_count": 9216,
+      "output_finite_count": 0,
+      "output_finite_max_abs": null
+    },
+    {
+      "name": "eager_no_mkldnn",
+      "attention_implementation": "eager",
+      "mkldnn_enabled": false,
+      "parameter_count": 23953920,
+      "nonfinite_parameter_count": 0,
+      "parameter_max_abs": 6.109375,
+      "output_shape": [
+        2,
+        9,
+        512
+      ],
+      "output_nonfinite_count": 0,
+      "output_finite_count": 9216,
+      "output_finite_max_abs": 5.324512958526611
+    }
+  ],
+  "patched_component_verification": {
+    "chunk_count": 6,
+    "attention_implementation": "eager",
+    "index_nonfinite_count": 0,
+    "index_norm_min": 0.9999999403953552,
+    "index_norm_max": 1.0,
+    "query": "缓存目录不可写怎么办",
+    "query_nonfinite_count": 0,
+    "top_ids": [
+      "configuration.md#1",
+      "logging.md#1",
+      "startup.md#1"
+    ]
+  },
+  "conclusion": "All model parameters are finite. Default BERT SDPA emits NaNs on this Windows CPU stack, with or without MKLDNN. Explicit eager attention emits finite embeddings; rag_components.py now requests eager for BGE only."
+}

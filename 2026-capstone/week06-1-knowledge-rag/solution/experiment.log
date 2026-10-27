@@ -1,0 +1,85 @@
+D:\桌面\大四文件夹\Capstone-Project\2026顶点课程\第一周_LLM推理\.venv\Lib\site-packages\transformers\utils\hub.py:105: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+[retrieval] {"vector": {"n": 8, "hit_at_1": 0.875, "mean_source_recall_at_3": 1.0}, "hybrid": {"n": 8, "hit_at_1": 1.0, "mean_source_recall_at_3": 1.0}}
+Sliding Window Attention is enabled but not implemented for `sdpa`; unexpected results may be encountered.
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:04<00:12,  4.33s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:08<00:08,  4.27s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:13<00:04,  4.35s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:16<00:00,  4.10s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:16<00:00,  4.18s/it]
+
+[experiment] 01_vector_port
+D:\桌面\大四文件夹\Capstone-Project\2026顶点课程\第一周_LLM推理\.venv\Lib\site-packages\transformers\integrations\sdpa_attention.py:54: UserWarning: 1Torch was not compiled with flash attention. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\aten\src\ATen\native\transformers\cuda\sdp_utils.cpp:555.)
+  attn_output = torch.nn.functional.scaled_dot_product_attention(
+[step 1] read_file {'path': 'task.txt'} -> ok
+[step 2] search_knowledge {'query': '如何修改并重新启动项目，以及如果仍然失败应去哪里查看日志'} -> ok
+{"id": "01_vector_port", "status": "ok", "steps": 3, "elapsed_s": 15.48, "citation_repairs": 0, "citations": ["logging.md#1", "troubleshooting.md#1"], "tool_calls": ["read_file", "search_knowledge"], "sha256": "40d206ff5f982bb056b759089b2c5f717e300b0e53fc1658243ac11437b4741f"}
+根据检索到的信息，以下是解决您的问题的操作步骤：
+
+1. 修改端口号：
+   在 `.env` 文件中将 `APP_PORT` 改为 `8001`。[troubleshooting.md#1]
+
+2. 重新启动项目：
+   执行 `python app.py` 重新启动项目。[troubleshooting.md#1]
+
+3. 查看日志：
+   如果仍然失败，请查看项目目录下的 `logs/app.log` 文件以获取更多错误信息。[logging.md#1]
+
+希望这些信息能帮助您解决问题。如果有其他疑问，请随时提问。
+
+[experiment] 02_hybrid_port
+[step 1] read_file {'path': 'task.txt'} -> ok
+[step 2] search_knowledge {'query': '如何修改并重新启动项目，以及如果仍然失败应去哪里查看日志'} -> ok
+{"id": "02_hybrid_port", "status": "ok", "steps": 3, "elapsed_s": 18.198, "citation_repairs": 0, "citations": ["configuration.md#1", "logging.md#1", "troubleshooting.md#1"], "tool_calls": ["read_file", "search_knowledge"], "sha256": "a0d2e179175e0a29c48aa56983d511c3f996311c873e02c66ef36222538dd126"}
+根据检索到的信息，以下是解决您的问题的操作步骤：
+
+1. 在 `.env` 文件中将 `APP_PORT` 改为 `8001`，具体操作如下：
+   - 打开项目根目录下的 `.env` 文件。
+   - 修改 `APP_PORT=8000` 为 `APP_PORT=8001`。
+   - 保存文件。
+
+2. 重新启动项目：
+   - 在终端中输入 `python app.py` 来启动项目。
+
+3. 如果仍然失败，请查看运行日志以获取更多信息：
+   - 日志位于项目目录下的 `logs/app.log`。
+   - 查看该文件以获取最近的错误信息。
+
+以上操作步骤来源于以下资料：
+
+- [troubleshooting.md#1]：端口占用错误（教学虚构资料）
+- [logging.md#1]：运行日志与排查（教学虚构资料）
+- [configuration.md#1]：本地配置文件（教学虚构资料）
+
+希望这些信息能帮助您解决问题。如果有其他问题，请随时提问。
+
+[experiment] 03_hybrid_onboarding
+[step 1] read_file {'path': 'onboarding.txt'} -> ok
+[step 3] search_knowledge {'query': '首次运行要安装什么、准备哪个配置文件？用什么命令启动？'} -> ok
+{"id": "03_hybrid_onboarding", "status": "citation_failed", "steps": 4, "elapsed_s": 20.056, "citation_repairs": 1, "citations": ["configuration.md#1", "logging.md#789", "troubleshooting.md#1"], "tool_calls": ["read_file", "search_knowledge"], "sha256": "df4e8f743daebf6794ae7383f42f852ad09f41d8a295ab2a0e3a6d9167708a98"}
+根据首次运行的相关资料，首次运行这个示例项目时，先在项目根目录执行 `pip install -r requirements.txt` 安装依赖，再将 `.env.example` 复制为 `.env` 准备配置，最后执行 `python app.py` 启动。配置项说明见 [configuration.md#1]。以上是示例项目的操作资料，文档助手只解释这些命令，不执行安装或启动。
+
+启动时提示“Address already in use”，通常表示当前端口已被其他进程占用。可以在 `.env` 中将 `APP_PORT` 改成一个空闲端口，例如 8001，再重新启动项目；若 8000 也被占用，需另选空闲端口。运行错误详情可查看 `logs/app.log`。[troubleshooting.md#1]
+
+出错时的日志位置和日志的保留天数信息未知。[logging.md#789]
+
+[experiment] 04_hybrid_export
+[step 1] read_file {'path': 'export_task.txt'} -> ok
+[step 2] search_knowledge {'query': '导出保存到哪个文件？使用什么编码？是否包含运行日志？再次导出会怎样，我应该先做什么？'} -> ok
+{"id": "04_hybrid_export", "status": "ok", "steps": 3, "elapsed_s": 12.998, "citation_repairs": 0, "citations": ["export.md#1", "logging.md#1"], "tool_calls": ["read_file", "search_knowledge"], "sha256": "2e8eecbd960475b13b64d7e678b5d3f419aa36e17b5532eaa8c1967951026583"}
+根据查询结果，以下是回答：
+
+1. 导出保存到 `exports/result.csv` 文件中。[export.md#1]
+2. 导出文件使用 UTF-8 编码，只包含数据行，不包含运行日志。[export.md#1]
+3. 再次导出会替换同名文件，如果需要保留旧结果，请先另存。[export.md#1]
+
+关于运行日志，可以参考以下信息：
+运行日志写入项目目录下的 `logs/app.log`。运行出错时，先查看该文件最近的错误信息。分享日志前要去除密钥和个人信息。日志中的单条错误只说明对应现象，其他故障需要另行检查。[logging.md#1]
+
+希望这些信息对您有所帮助。如果有更多问题，请随时提问。
+
+[experiment] 05_hybrid_unknown
+[step 1] read_file {'path': 'unknown_task.txt'} -> ok
+[step 2] search_knowledge {'query': '教学项目 支持 PostgreSQL 设置数据库连接环境变量'} -> ok
+{"id": "05_hybrid_unknown", "status": "ok", "steps": 4, "elapsed_s": 13.33, "citation_repairs": 1, "citations": ["configuration.md#1"], "tool_calls": ["read_file", "search_knowledge"], "sha256": "934c51e190aae54438aa71996bad8bc19d35f55a8bfee64853e920f41dcbe2bb"}
+根据 [configuration.md#1]，项目从根目录的 `.env` 文件读取配置。首次使用时，需要将 `.env.example` 复制为 `.env`。配置在启动时读取，修改后需要重新运行 `python app.py`，已运行的实例需要先正常退出再启动。但是，知识库中没有明确提到关于 PostgreSQL 支持及相应的数据库连接环境变量设置的信息。因此，这部分信息未知。
+
+如果您有其他问题或需要进一步的帮助，请告诉我！
+
+完整记录已保存：results

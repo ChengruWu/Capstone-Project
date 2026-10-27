@@ -1,0 +1,38 @@
+{
+  "created_at": "2026-10-14T12:09:22.048387+08:00",
+  "python": "3.12.1 (tags/v3.12.1:2305ca5, Dec  7 2023, 22:03:25) [MSC v.1937 64 bit (AMD64)]",
+  "executable": "D:\\桌面\\大四文件夹\\Capstone-Project\\2026顶点课程\\第一周_LLM推理\\.venv\\Scripts\\python.exe",
+  "platform": "Windows-11-10.0.22631-SP0",
+  "cwd": "D:\\桌面\\大四文件夹\\Capstone-Project\\2026-capstone\\week06-1-knowledge-rag\\solution",
+  "argv": [
+    "run_experiments.py",
+    "--output-dir",
+    "results"
+  ],
+  "versions": {
+    "torch": "2.4.0+cu121",
+    "transformers": "4.51.3",
+    "accelerate": "1.6.0",
+    "bitsandbytes": "0.45.5",
+    "huggingface-hub": "0.36.2"
+  },
+  "cuda_available": true,
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "source_sha256": {
+    "agent_v1.py": "11049067ededaa47eec47dc2bf92af04aadfad2b167bdc1f7786e6b86f410f32",
+    "rag_components.py": "4747d72284277a5bbe448c395d2b369c1275b6cbef8304a0021c0e6f36864c3a",
+    "run_experiments.py": "ad1dabd055e0d75eb4d123b76a39ed9462673add3118d5bb5c2384dbab5040a7",
+    "test_agent.py": "92f8a24b6bdafb19235ad7dfac414a0176f2ce164f166af23e50772e5a8bb3f6",
+    "test_components.py": "ce7de044c48e826b75d097383b79a5c352e7d2574611c748b2815003f69f2519",
+    "verify_results.py": "643a188cf0f404733f71e90ded8f9fc5d22430e6c1af9060a12401dcead138ed"
+  },
+  "knowledge_sha256": {
+    "configuration.md": "12b2bd66f91c0d21585f782134be3e5e0e62f92c571f6e02d785dd8a1ee7da37",
+    "export.md": "0020412cb2efb1927c6d86ec4065fc4dff82ce3717dca4b69929338e7e641eb5",
+    "logging.md": "2e0612ccd2b67ab54eca02202bd6ae2d4802479e3c76720d2baa206fa7c8f043",
+    "sample_data.md": "2b16d0f38e00ce3c6aeb643d11188f7b4d3a7e3004ad78a02959865983f08a2d",
+    "startup.md": "b1f6493e78e743320254a5454d8e8f941b507c96806fa4db09bc1793a43f5c31",
+    "troubleshooting.md": "afa9c5dd84546759ac0a9a134aae7ed782997c0b7823e6aad66b8e53454ed06b"
+  },
+  "nvidia_smi": "Wed Oct 14 12:09:22 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 581.15                 Driver Version: 581.15         CUDA Version: 13.0     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                  Driver-Model | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA GeForce RTX 4060 ...  WDDM  |   00000000:01:00.0  On |                  N/A |\n| N/A   47C    P3              9W /   55W |    1666MiB /   8188MiB |     13%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|    0   N/A  N/A            1428    C+G   ...App_cw5n1h2txyewy\\LockApp.exe      N/A      |\n|    0   N/A  N/A            2696    C+G   C:\\Windows\\System32\\dwm.exe           N/A      |\n|    0   N/A  N/A            6520    C+G   ...8bbwe\\PhoneExperienceHost.exe      N/A      |\n|    0   N/A  N/A            9368    C+G   ...lpaper_engine\\wallpaper32.exe      N/A      |\n|    0   N/A  N/A           10648    C+G   ...ows\\System32\\NahimicSvc64.exe      N/A      |\n|    0   N/A  N/A           16404    C+G   ....0.4258.62\\msedgewebview2.exe      N/A      |\n|    0   N/A  N/A           17044    C+G   ...xyewy\\ShellExperienceHost.exe      N/A      |\n|    0   N/A  N/A           17648    C+G   ...kyb3d8bbwe\\EdgeGameAssist.exe      N/A      |\n|    0   N/A  N/A           19260    C+G   ...y\\StartMenuExperienceHost.exe      N/A      |\n|    0   N/A  N/A           20392    C+G   ...IA app\\CEF\\NVIDIA Overlay.exe      N/A      |\n|    0   N/A  N/A           21192    C+G   ...IA app\\CEF\\NVIDIA Overlay.exe      N/A      |\n|    0   N/A  N/A           22184    C+G   ...dzpwqaze\\app\\Twinkle Tray.exe      N/A      |\n|    0   N/A  N/A           24356    C+G   ...em_tray\\lghub_system_tray.exe      N/A      |\n|    0   N/A  N/A           24480    C+G   C:\\Windows\\explorer.exe               N/A      |\n|    0   N/A  N/A           25848    C+G   ....0.4258.62\\msedgewebview2.exe      N/A      |\n|    0   N/A  N/A           28000    C+G   ...ffice6\\promecefpluginhost.exe      N/A      |\n|    0   N/A  N/A           28840    C+G   ...5n1h2txyewy\\TextInputHost.exe      N/A      |\n|    0   N/A  N/A           28944    C+G   ..._cw5n1h2txyewy\\SearchHost.exe      N/A      |\n|    0   N/A  N/A           54204    C+G   D:\\Weixin\\Weixin.exe                  N/A      |\n|    0   N/A  N/A           58652    C+G   ...2p2nqsd0c76g0\\app\\ChatGPT.exe      N/A      |\n|    0   N/A  N/A           60688    C+G   ...crosoft shared\\ink\\TabTip.exe      N/A      |\n|    0   N/A  N/A           63964    C+G   ...t\\Edge\\Application\\msedge.exe      N/A      |\n|    0   N/A  N/A           66668    C+G   ...4__w2gh52qy24etm\\Nahimic3.exe      N/A      |\n|    0   N/A  N/A           72416    C+G   ...ne\\2.0.29.9292\\LegionZone.exe      N/A      |\n|    0   N/A  N/A           75400    C+G   D:\\Microsoft VS Code\\Code.exe         N/A      |\n|    0   N/A  N/A           80676    C+G   ...t\\Edge\\Application\\msedge.exe      N/A      |\n|    0   N/A  N/A           86256    C+G   ...t\\Edge\\Application\\msedge.exe      N/A      |\n|    0   N/A  N/A           87956    C+G   D:\\Microsoft VS Code\\Code.exe         N/A      |\n|    0   N/A  N/A           89176    C+G   ...2p2nqsd0c76g0\\app\\ChatGPT.exe      N/A      |\n|    0   N/A  N/A           92172    C+G   ...\\codex-computer-use-swift.exe      N/A      |\n+-----------------------------------------------------------------------------------------+\n"
+}

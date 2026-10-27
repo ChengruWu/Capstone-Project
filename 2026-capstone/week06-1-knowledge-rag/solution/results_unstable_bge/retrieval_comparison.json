@@ -1,0 +1,789 @@
+{
+  "created_at": "2026-10-14T11:46:55.118099+08:00",
+  "top_k": 3,
+  "cases": [
+    {
+      "id": "port",
+      "query": "Address already in use，APP_PORT=8001 应该怎样配置并重新启动？",
+      "expected_sources": [
+        "configuration.md",
+        "troubleshooting.md"
+      ],
+      "mode": "vector",
+      "hits": [
+        {
+          "id": "logging.md#1",
+          "source": "logging.md",
+          "text": "# 运行日志与排查（教学虚构资料）\n\n运行日志写入项目目录下的 `logs/app.log`。运行出错时，先查看该文件最近的错误信息。分享日志前要去除密钥和个人信息。日志中的单条错误只说明对应现象，其他故障需要另行检查。本资料未规定日志保留天数，也未说明自动清理策略。",
+          "content_sha256": "1d9cc19bd44be711f88120e0ec9cc0867fe021b573a6a423fd5357695df24083",
+          "rank": 1,
+          "score": 0.3678920865058899,
+          "vector_score": 0.3678920865058899,
+          "lexical_score": 0.0,
+          "vector_rank": 1,
+          "lexical_rank": null
+        },
+        {
+          "id": "configuration.md#1",
+          "source": "configuration.md",
+          "text": "# 本地配置文件（教学虚构资料）\n\n项目从根目录的 `.env` 读取配置。首次使用将 `.env.example` 复制为 `.env`。`APP_PORT=8000` 表示默认监听端口为 8000；改为 `APP_PORT=8001` 可使用端口 8001。配置在启动时读取，修改后需要重新运行 `python app.py`，已运行的实例需要先正常退出再启动。",
+          "content_sha256": "f3c879fe334af496e83ab8f69899bea2c49c4d7d2ee14a9485ae121f5c16c4b6",
+          "rank": 2,
+          "score": 0.3574882745742798,
+          "vector_score": 0.3574882745742798,
+          "lexical_score": 6.730010884561603,
+          "vector_rank": 2,
+          "lexical_rank": 2
+        },
+        {
+          "id": "troubleshooting.md#1",
+          "source": "troubleshooting.md",
+          "text": "# 端口占用错误（教学虚构资料）\n\n启动提示 `Address already in use` 通常表示当前端口已被其他进程占用。可在 `.env` 中将 `APP_PORT` 改成一个空闲端口，例如 8001，再重新启动项目；若 8001 也被占用，需另选空闲端口。不要为了运行示例项目直接结束不属于自己的进程。运行错误详情可查看 `logs/app.log`。",
+          "content_sha256": "5d60cdacf9fcfc426d1c88b273fcda582ff91d63a12eea33a15131cfb330ffc8",
+          "rank": 3,
+          "score": 0.3563663959503174,
+          "vector_score": 0.3563663959503174,
+          "lexical_score": 11.572608162583409,
+          "vector_rank": 3,
+          "lexical_rank": 1
+        }
+      ],
+      "hit_at_1": false,
+      "source_recall_at_3": 1.0
+    },
+    {
+      "id": "startup",
+      "query": "首次使用安装依赖、准备配置文件和启动命令是什么？",
+      "expected_sources": [
+        "startup.md"
+      ],
+      "mode": "vector",
+      "hits": [
+        {
+          "id": "logging.md#1",
+          "source": "logging.md",
+          "text": "# 运行日志与排查（教学虚构资料）\n\n运行日志写入项目目录下的 `logs/app.log`。运行出错时，先查看该文件最近的错误信息。分享日志前要去除密钥和个人信息。日志中的单条错误只说明对应现象，其他故障需要另行检查。本资料未规定日志保留天数，也未说明自动清理策略。",
+          "content_sha256": "1d9cc19bd44be711f88120e0ec9cc0867fe021b573a6a423fd5357695df24083",
+          "rank": 1,
+          "score": 0.306467741727829,
+          "vector_score": 0.306467741727829,
+          "lexical_score": 0.6410163341111472,
+          "vector_rank": 1,
+          "lexical_rank": 5
+        },
+        {
+          "id": "troubleshooting.md#1",
+          "source": "troubleshooting.md",
+          "text": "# 端口占用错误（教学虚构资料）\n\n启动提示 `Address already in use` 通常表示当前端口已被其他进程占用。可在 `.env` 中将 `APP_PORT` 改成一个空闲端口，例如 8001，再重新启动项目；若 8001 也被占用，需另选空闲端口。不要为了运行示例项目直接结束不属于自己的进程。运行错误详情可查看 `logs/app.log`。",
+          "content_sha256": "5d60cdacf9fcfc426d1c88b273fcda582ff91d63a12eea33a15131cfb330ffc8",
+          "rank": 2,
+          "score": 0.2831272780895233,
+          "vector_score": 0.2831272780895233,
+          "lexical_score": 0.94975181158028,
+          "vector_rank": 2,
+          "lexical_rank": 4
+        },
+        {
+          "id": "export.md#1",
+          "source": "export.md",
+          "text": "# 结果导出（教学虚构资料）\n\n在示例界面点击“导出结果”，系统会把当前筛选后的数据写到 `exports/result.csv`。导出文件为 UTF-8 编码，只包含数据行，不包含运行日志。再次导出会替换同名文件，需要保留旧结果时请先另存。",
+          "content_sha256": "88bad711ca5a03ea8d57921fb438d01ea441cd9b33ddd3ad13d6b84ad3dab1b1",
+          "rank": 3,
+          "score": 0.27643507719039917,
+          "vector_score": 0.27643507719039917,
+          "lexical_score": 1.0342690514422557,
+          "vector_rank": 3,
+          "lexical_rank": 3
+        }
+      ],
+      "hit_at_1": false,
+      "source_recall_at_3": 0.0
+    },
+    {
+      "id": "logs",
+      "query": "运行日志路径是什么？日志默认保留多少天？",
+      "expected_sources": [
+        "logging.md"
+      ],
+      "mode": "vector",
+      "hits": [
+        {
+          "id": "configuration.md#1",
+          "source": "configuration.md",
+          "text": "# 本地配置文件（教学虚构资料）\n\n项目从根目录的 `.env` 读取配置。首次使用将 `.env.example` 复制为 `.env`。`APP_PORT=8000` 表示默认监听端口为 8000；改为 `APP_PORT=8001` 可使用端口 8001。配置在启动时读取，修改后需要重新运行 `python app.py`，已运行的实例需要先正常退出再启动。",
+          "content_sha256": "f3c879fe334af496e83ab8f69899bea2c49c4d7d2ee14a9485ae121f5c16c4b6",
+          "rank": 1,
+          "score": 0.31435859203338623,
+          "vector_score": 0.31435859203338623,
+          "lexical_score": 1.9045382014503032,
+          "vector_rank": 1,
+          "lexical_rank": 3
+        },
+        {
+          "id": "sample_data.md#1",
+          "source": "sample_data.md",
+          "text": "# 示例数据（教学虚构资料）\n\n演示数据保存在 `data/sample.csv`，包含编号、类别和数值三列。需要更换演示数据时，请保留表头与 UTF-8 编码。这个 CSV 只用于界面展示，不保存用户偏好，也不控制服务监听端口。",
+          "content_sha256": "abd5bf59fae83da8de6a1c577727a3196d07d9635e17092fa2e8975f95bc7579",
+          "rank": 2,
+          "score": 0.26977938413619995,
+          "vector_score": 0.26977938413619995,
+          "lexical_score": 0.7681070225163613,
+          "vector_rank": 2,
+          "lexical_rank": 4
+        },
+        {
+          "id": "export.md#1",
+          "source": "export.md",
+          "text": "# 结果导出（教学虚构资料）\n\n在示例界面点击“导出结果”，系统会把当前筛选后的数据写到 `exports/result.csv`。导出文件为 UTF-8 编码，只包含数据行，不包含运行日志。再次导出会替换同名文件，需要保留旧结果时请先另存。",
+          "content_sha256": "88bad711ca5a03ea8d57921fb438d01ea441cd9b33ddd3ad13d6b84ad3dab1b1",
+          "rank": 3,
+          "score": 0.26545000076293945,
+          "vector_score": 0.26545000076293945,
+          "lexical_score": 3.1834015368910884,
+          "vector_rank": 3,
+          "lexical_rank": 2
+        }
+      ],
+      "hit_at_1": false,
+      "source_recall_at_3": 0.0
+    },
+    {
+      "id": "export",
+      "query": "导出结果保存在哪里？再次导出会覆盖吗？",
+      "expected_sources": [
+        "export.md"
+      ],
+      "mode": "vector",
+      "hits": [
+        {
+          "id": "logging.md#1",
+          "source": "logging.md",
+          "text": "# 运行日志与排查（教学虚构资料）\n\n运行日志写入项目目录下的 `logs/app.log`。运行出错时，先查看该文件最近的错误信息。分享日志前要去除密钥和个人信息。日志中的单条错误只说明对应现象，其他故障需要另行检查。本资料未规定日志保留天数，也未说明自动清理策略。",
+          "content_sha256": "1d9cc19bd44be711f88120e0ec9cc0867fe021b573a6a423fd5357695df24083",
+          "rank": 1,
+          "score": 0.38826823234558105,
+          "vector_score": 0.38826823234558105,
+          "lexical_score": 0.0,
+          "vector_rank": 1,
+          "lexical_rank": null
+        },
+        {
+          "id": "export.md#1",
+          "source": "export.md",
+          "text": "# 结果导出（教学虚构资料）\n\n在示例界面点击“导出结果”，系统会把当前筛选后的数据写到 `exports/result.csv`。导出文件为 UTF-8 编码，只包含数据行，不包含运行日志。再次导出会替换同名文件，需要保留旧结果时请先另存。",
+          "content_sha256": "88bad711ca5a03ea8d57921fb438d01ea441cd9b33ddd3ad13d6b84ad3dab1b1",
+          "rank": 2,
+          "score": 0.35302865505218506,
+          "vector_score": 0.35302865505218506,
+          "lexical_score": 12.086804125438233,
+          "vector_rank": 2,
+          "lexical_rank": 1
+        },
+        {
+          "id": "troubleshooting.md#1",
+          "source": "troubleshooting.md",
+          "text": "# 端口占用错误（教学虚构资料）\n\n启动提示 `Address already in use` 通常表示当前端口已被其他进程占用。可在 `.env` 中将 `APP_PORT` 改成一个空闲端口，例如 8001，再重新启动项目；若 8001 也被占用，需另选空闲端口。不要为了运行示例项目直接结束不属于自己的进程。运行错误详情可查看 `logs/app.log`。",
+          "content_sha256": "5d60cdacf9fcfc426d1c88b273fcda582ff91d63a12eea33a15131cfb330ffc8",
+          "rank": 3,
+          "score": 0.34621483087539673,
+          "vector_score": 0.34621483087539673,
+          "lexical_score": 0.0,
+          "vector_rank": 3,
+          "lexical_rank": null
+        }
+      ],
+      "hit_at_1": false,
+      "source_recall_at_3": 1.0
+    },
+    {
+      "id": "sample",
+      "query": "data/sample.csv 示例数据包含哪些列，更换数据要保留什么？",
+      "expected_sources": [
+        "sample_data.md"
+      ],
+      "mode": "vector",
+      "hits": [
+        {
+          "id": "troubleshooting.md#1",
+          "source": "troubleshooting.md",
+          "text": "# 端口占用错误（教学虚构资料）\n\n启动提示 `Address already in use` 通常表示当前端口已被其他进程占用。可在 `.env` 中将 `APP_PORT` 改成一个空闲端口，例如 8001，再重新启动项目；若 8001 也被占用，需另选空闲端口。不要为了运行示例项目直接结束不属于自己的进程。运行错误详情可查看 `logs/app.log`。",
+          "content_sha256": "5d60cdacf9fcfc426d1c88b273fcda582ff91d63a12eea33a15131cfb330ffc8",
+          "rank": 1,
+          "score": 0.32324981689453125,
+          "vector_score": 0.32324981689453125,
+          "lexical_score": 0.41696553086026444,
+          "vector_rank": 1,
+          "lexical_rank": 5
+        },
+        {
+          "id": "sample_data.md#1",
+          "source": "sample_data.md",
+          "text": "# 示例数据（教学虚构资料）\n\n演示数据保存在 `data/sample.csv`，包含编号、类别和数值三列。需要更换演示数据时，请保留表头与 UTF-8 编码。这个 CSV 只用于界面展示，不保存用户偏好，也不控制服务监听端口。",
+          "content_sha256": "abd5bf59fae83da8de6a1c577727a3196d07d9635e17092fa2e8975f95bc7579",
+          "rank": 2,
+          "score": 0.3181743025779724,
+          "vector_score": 0.3181743025779724,
+          "lexical_score": 12.622331942135705,
+          "vector_rank": 2,
+          "lexical_rank": 1
+        },
+        {
+          "id": "startup.md#1",
+          "source": "startup.md",
+          "text": "# 首次安装与启动（教学虚构资料）\n\n首次运行这个示例项目时，先在项目根目录执行 `pip install -r requirements.txt` 安装依赖，再将 `.env.example` 复制为 `.env` 准备配置，最后执行 `python app.py` 启动。配置项说明见 configuration.md。以上是示例项目的操作资料，文档助手只解释这些命令，不执行安装或启动。",
+          "content_sha256": "95ba335d6e9834d4c983eb9d9d707d5de917d1a887b655a4622bc2bc98343feb",
+          "rank": 3,
+          "score": 0.30903393030166626,
+          "vector_score": 0.30903393030166626,
+          "lexical_score": 0.6191999736455931,
+          "vector_rank": 3,
+          "lexical_rank": 4
+        }
+      ],
+      "hit_at_1": false,
+      "source_recall_at_3": 1.0
+    },
+    {
+      "id": "config",
+      "query": "修改 .env 中的 APP_PORT 后运行中的服务会自动生效吗？",
+      "expected_sources": [
+        "configuration.md"
+      ],
+      "mode": "vector",
+      "hits": [
+        {
+          "id": "sample_data.md#1",
+          "source": "sample_data.md",
+          "text": "# 示例数据（教学虚构资料）\n\n演示数据保存在 `data/sample.csv`，包含编号、类别和数值三列。需要更换演示数据时，请保留表头与 UTF-8 编码。这个 CSV 只用于界面展示，不保存用户偏好，也不控制服务监听端口。",
+          "content_sha256": "abd5bf59fae83da8de6a1c577727a3196d07d9635e17092fa2e8975f95bc7579",
+          "rank": 1,
+          "score": 0.279840350151062,
+          "vector_score": 0.279840350151062,
+          "lexical_score": 1.7070352256156656,
+          "vector_rank": 1,
+          "lexical_rank": 4
+        },
+        {
+          "id": "logging.md#1",
+          "source": "logging.md",
+          "text": "# 运行日志与排查（教学虚构资料）\n\n运行日志写入项目目录下的 `logs/app.log`。运行出错时，先查看该文件最近的错误信息。分享日志前要去除密钥和个人信息。日志中的单条错误只说明对应现象，其他故障需要另行检查。本资料未规定日志保留天数，也未说明自动清理策略。",
+          "content_sha256": "1d9cc19bd44be711f88120e0ec9cc0867fe021b573a6a423fd5357695df24083",
+          "rank": 2,
+          "score": 0.276061475276947,
+          "vector_score": 0.276061475276947,
+          "lexical_score": 3.2337416591693446,
+          "vector_rank": 2,
+          "lexical_rank": 2
+        },
+        {
+          "id": "configuration.md#1",
+          "source": "configuration.md",
+          "text": "# 本地配置文件（教学虚构资料）\n\n项目从根目录的 `.env` 读取配置。首次使用将 `.env.example` 复制为 `.env`。`APP_PORT=8000` 表示默认监听端口为 8000；改为 `APP_PORT=8001` 可使用端口 8001。配置在启动时读取，修改后需要重新运行 `python app.py`，已运行的实例需要先正常退出再启动。",
+          "content_sha256": "f3c879fe334af496e83ab8f69899bea2c49c4d7d2ee14a9485ae121f5c16c4b6",
+          "rank": 3,
+          "score": 0.2621886134147644,
+          "vector_score": 0.2621886134147644,
+          "lexical_score": 4.549151192456321,
+          "vector_rank": 3,
+          "lexical_rank": 1
+        }
+      ],
+      "hit_at_1": false,
+      "source_recall_at_3": 1.0
+    },
+    {
+      "id": "backup",
+      "query": "exports/result.csv 再次导出前如何保留旧结果？",
+      "expected_sources": [
+        "export.md"
+      ],
+      "mode": "vector",
+      "hits": [
+        {
+          "id": "sample_data.md#1",
+          "source": "sample_data.md",
+          "text": "# 示例数据（教学虚构资料）\n\n演示数据保存在 `data/sample.csv`，包含编号、类别和数值三列。需要更换演示数据时，请保留表头与 UTF-8 编码。这个 CSV 只用于界面展示，不保存用户偏好，也不控制服务监听端口。",
+          "content_sha256": "abd5bf59fae83da8de6a1c577727a3196d07d9635e17092fa2e8975f95bc7579",
+          "rank": 1,
+          "score": 0.2685396671295166,
+          "vector_score": 0.2685396671295166,
+          "lexical_score": 2.3492062200378436,
+          "vector_rank": 1,
+          "lexical_rank": 2
+        },
+        {
+          "id": "troubleshooting.md#1",
+          "source": "troubleshooting.md",
+          "text": "# 端口占用错误（教学虚构资料）\n\n启动提示 `Address already in use` 通常表示当前端口已被其他进程占用。可在 `.env` 中将 `APP_PORT` 改成一个空闲端口，例如 8001，再重新启动项目；若 8001 也被占用，需另选空闲端口。不要为了运行示例项目直接结束不属于自己的进程。运行错误详情可查看 `logs/app.log`。",
+          "content_sha256": "5d60cdacf9fcfc426d1c88b273fcda582ff91d63a12eea33a15131cfb330ffc8",
+          "rank": 2,
+          "score": 0.2667441666126251,
+          "vector_score": 0.2667441666126251,
+          "lexical_score": 0.0,
+          "vector_rank": 2,
+          "lexical_rank": null
+        },
+        {
+          "id": "export.md#1",
+          "source": "export.md",
+          "text": "# 结果导出（教学虚构资料）\n\n在示例界面点击“导出结果”，系统会把当前筛选后的数据写到 `exports/result.csv`。导出文件为 UTF-8 编码，只包含数据行，不包含运行日志。再次导出会替换同名文件，需要保留旧结果时请先另存。",
+          "content_sha256": "88bad711ca5a03ea8d57921fb438d01ea441cd9b33ddd3ad13d6b84ad3dab1b1",
+          "rank": 3,
+          "score": 0.25884419679641724,
+          "vector_score": 0.25884419679641724,
+          "lexical_score": 17.195112958362493,
+          "vector_rank": 3,
+          "lexical_rank": 1
+        }
+      ],
+      "hit_at_1": false,
+      "source_recall_at_3": 1.0
+    },
+    {
+      "id": "privacy",
+      "query": "分享 logs/app.log 前应该去除什么信息？",
+      "expected_sources": [
+        "logging.md"
+      ],
+      "mode": "vector",
+      "hits": [
+        {
+          "id": "troubleshooting.md#1",
+          "source": "troubleshooting.md",
+          "text": "# 端口占用错误（教学虚构资料）\n\n启动提示 `Address already in use` 通常表示当前端口已被其他进程占用。可在 `.env` 中将 `APP_PORT` 改成一个空闲端口，例如 8001，再重新启动项目；若 8001 也被占用，需另选空闲端口。不要为了运行示例项目直接结束不属于自己的进程。运行错误详情可查看 `logs/app.log`。",
+          "content_sha256": "5d60cdacf9fcfc426d1c88b273fcda582ff91d63a12eea33a15131cfb330ffc8",
+          "rank": 1,
+          "score": 0.29658377170562744,
+          "vector_score": 0.29658377170562744,
+          "lexical_score": 2.360306329633116,
+          "vector_rank": 1,
+          "lexical_rank": 2
+        },
+        {
+          "id": "logging.md#1",
+          "source": "logging.md",
+          "text": "# 运行日志与排查（教学虚构资料）\n\n运行日志写入项目目录下的 `logs/app.log`。运行出错时，先查看该文件最近的错误信息。分享日志前要去除密钥和个人信息。日志中的单条错误只说明对应现象，其他故障需要另行检查。本资料未规定日志保留天数，也未说明自动清理策略。",
+          "content_sha256": "1d9cc19bd44be711f88120e0ec9cc0867fe021b573a6a423fd5357695df24083",
+          "rank": 2,
+          "score": 0.2804437279701233,
+          "vector_score": 0.2804437279701233,
+          "lexical_score": 7.241968458832454,
+          "vector_rank": 2,
+          "lexical_rank": 1
+        },
+        {
+          "id": "sample_data.md#1",
+          "source": "sample_data.md",
+          "text": "# 示例数据（教学虚构资料）\n\n演示数据保存在 `data/sample.csv`，包含编号、类别和数值三列。需要更换演示数据时，请保留表头与 UTF-8 编码。这个 CSV 只用于界面展示，不保存用户偏好，也不控制服务监听端口。",
+          "content_sha256": "abd5bf59fae83da8de6a1c577727a3196d07d9635e17092fa2e8975f95bc7579",
+          "rank": 3,
+          "score": 0.27960115671157837,
+          "vector_score": 0.27960115671157837,
+          "lexical_score": 0.0,
+          "vector_rank": 3,
+          "lexical_rank": null
+        }
+      ],
+      "hit_at_1": false,
+      "source_recall_at_3": 1.0
+    },
+    {
+      "id": "port",
+      "query": "Address already in use，APP_PORT=8001 应该怎样配置并重新启动？",
+      "expected_sources": [
+        "configuration.md",
+        "troubleshooting.md"
+      ],
+      "mode": "hybrid",
+      "hits": [
+        {
+          "id": "troubleshooting.md#1",
+          "source": "troubleshooting.md",
+          "text": "# 端口占用错误（教学虚构资料）\n\n启动提示 `Address already in use` 通常表示当前端口已被其他进程占用。可在 `.env` 中将 `APP_PORT` 改成一个空闲端口，例如 8001，再重新启动项目；若 8001 也被占用，需另选空闲端口。不要为了运行示例项目直接结束不属于自己的进程。运行错误详情可查看 `logs/app.log`。",
+          "content_sha256": "5d60cdacf9fcfc426d1c88b273fcda582ff91d63a12eea33a15131cfb330ffc8",
+          "rank": 1,
+          "score": 0.032266458495966696,
+          "vector_score": 0.3001129627227783,
+          "lexical_score": 11.572608162583409,
+          "vector_rank": 3,
+          "lexical_rank": 1
+        },
+        {
+          "id": "configuration.md#1",
+          "source": "configuration.md",
+          "text": "# 本地配置文件（教学虚构资料）\n\n项目从根目录的 `.env` 读取配置。首次使用将 `.env.example` 复制为 `.env`。`APP_PORT=8000` 表示默认监听端口为 8000；改为 `APP_PORT=8001` 可使用端口 8001。配置在启动时读取，修改后需要重新运行 `python app.py`，已运行的实例需要先正常退出再启动。",
+          "content_sha256": "f3c879fe334af496e83ab8f69899bea2c49c4d7d2ee14a9485ae121f5c16c4b6",
+          "rank": 2,
+          "score": 0.0315136476426799,
+          "vector_score": 0.2778375744819641,
+          "lexical_score": 6.730010884561603,
+          "vector_rank": 5,
+          "lexical_rank": 2
+        },
+        {
+          "id": "startup.md#1",
+          "source": "startup.md",
+          "text": "# 首次安装与启动（教学虚构资料）\n\n首次运行这个示例项目时，先在项目根目录执行 `pip install -r requirements.txt` 安装依赖，再将 `.env.example` 复制为 `.env` 准备配置，最后执行 `python app.py` 启动。配置项说明见 configuration.md。以上是示例项目的操作资料，文档助手只解释这些命令，不执行安装或启动。",
+          "content_sha256": "95ba335d6e9834d4c983eb9d9d707d5de917d1a887b655a4622bc2bc98343feb",
+          "rank": 3,
+          "score": 0.03149801587301587,
+          "vector_score": 0.2798030972480774,
+          "lexical_score": 2.581050061646126,
+          "vector_rank": 4,
+          "lexical_rank": 3
+        }
+      ],
+      "hit_at_1": true,
+      "source_recall_at_3": 1.0
+    },
+    {
+      "id": "startup",
+      "query": "首次使用安装依赖、准备配置文件和启动命令是什么？",
+      "expected_sources": [
+        "startup.md"
+      ],
+      "mode": "hybrid",
+      "hits": [
+        {
+          "id": "configuration.md#1",
+          "source": "configuration.md",
+          "text": "# 本地配置文件（教学虚构资料）\n\n项目从根目录的 `.env` 读取配置。首次使用将 `.env.example` 复制为 `.env`。`APP_PORT=8000` 表示默认监听端口为 8000；改为 `APP_PORT=8001` 可使用端口 8001。配置在启动时读取，修改后需要重新运行 `python app.py`，已运行的实例需要先正常退出再启动。",
+          "content_sha256": "f3c879fe334af496e83ab8f69899bea2c49c4d7d2ee14a9485ae121f5c16c4b6",
+          "rank": 1,
+          "score": 0.03252247488101534,
+          "vector_score": 0.26210683584213257,
+          "lexical_score": 9.798500975551574,
+          "vector_rank": 1,
+          "lexical_rank": 2
+        },
+        {
+          "id": "startup.md#1",
+          "source": "startup.md",
+          "text": "# 首次安装与启动（教学虚构资料）\n\n首次运行这个示例项目时，先在项目根目录执行 `pip install -r requirements.txt` 安装依赖，再将 `.env.example` 复制为 `.env` 准备配置，最后执行 `python app.py` 启动。配置项说明见 configuration.md。以上是示例项目的操作资料，文档助手只解释这些命令，不执行安装或启动。",
+          "content_sha256": "95ba335d6e9834d4c983eb9d9d707d5de917d1a887b655a4622bc2bc98343feb",
+          "rank": 2,
+          "score": 0.03177805800756621,
+          "vector_score": 0.20587055385112762,
+          "lexical_score": 14.052251917690942,
+          "vector_rank": 5,
+          "lexical_rank": 1
+        },
+        {
+          "id": "export.md#1",
+          "source": "export.md",
+          "text": "# 结果导出（教学虚构资料）\n\n在示例界面点击“导出结果”，系统会把当前筛选后的数据写到 `exports/result.csv`。导出文件为 UTF-8 编码，只包含数据行，不包含运行日志。再次导出会替换同名文件，需要保留旧结果时请先另存。",
+          "content_sha256": "88bad711ca5a03ea8d57921fb438d01ea441cd9b33ddd3ad13d6b84ad3dab1b1",
+          "rank": 3,
+          "score": 0.031746031746031744,
+          "vector_score": 0.23004376888275146,
+          "lexical_score": 1.0342690514422557,
+          "vector_rank": 3,
+          "lexical_rank": 3
+        }
+      ],
+      "hit_at_1": false,
+      "source_recall_at_3": 1.0
+    },
+    {
+      "id": "logs",
+      "query": "运行日志路径是什么？日志默认保留多少天？",
+      "expected_sources": [
+        "logging.md"
+      ],
+      "mode": "hybrid",
+      "hits": [
+        {
+          "id": "configuration.md#1",
+          "source": "configuration.md",
+          "text": "# 本地配置文件（教学虚构资料）\n\n项目从根目录的 `.env` 读取配置。首次使用将 `.env.example` 复制为 `.env`。`APP_PORT=8000` 表示默认监听端口为 8000；改为 `APP_PORT=8001` 可使用端口 8001。配置在启动时读取，修改后需要重新运行 `python app.py`，已运行的实例需要先正常退出再启动。",
+          "content_sha256": "f3c879fe334af496e83ab8f69899bea2c49c4d7d2ee14a9485ae121f5c16c4b6",
+          "rank": 1,
+          "score": 0.032266458495966696,
+          "vector_score": 0.30258437991142273,
+          "lexical_score": 1.9045382014503032,
+          "vector_rank": 1,
+          "lexical_rank": 3
+        },
+        {
+          "id": "export.md#1",
+          "source": "export.md",
+          "text": "# 结果导出（教学虚构资料）\n\n在示例界面点击“导出结果”，系统会把当前筛选后的数据写到 `exports/result.csv`。导出文件为 UTF-8 编码，只包含数据行，不包含运行日志。再次导出会替换同名文件，需要保留旧结果时请先另存。",
+          "content_sha256": "88bad711ca5a03ea8d57921fb438d01ea441cd9b33ddd3ad13d6b84ad3dab1b1",
+          "rank": 2,
+          "score": 0.03225806451612903,
+          "vector_score": 0.2577057480812073,
+          "lexical_score": 3.1834015368910884,
+          "vector_rank": 2,
+          "lexical_rank": 2
+        },
+        {
+          "id": "logging.md#1",
+          "source": "logging.md",
+          "text": "# 运行日志与排查（教学虚构资料）\n\n运行日志写入项目目录下的 `logs/app.log`。运行出错时，先查看该文件最近的错误信息。分享日志前要去除密钥和个人信息。日志中的单条错误只说明对应现象，其他故障需要另行检查。本资料未规定日志保留天数，也未说明自动清理策略。",
+          "content_sha256": "1d9cc19bd44be711f88120e0ec9cc0867fe021b573a6a423fd5357695df24083",
+          "rank": 3,
+          "score": 0.03177805800756621,
+          "vector_score": 0.24930337071418762,
+          "lexical_score": 4.335693358564235,
+          "vector_rank": 5,
+          "lexical_rank": 1
+        }
+      ],
+      "hit_at_1": false,
+      "source_recall_at_3": 1.0
+    },
+    {
+      "id": "export",
+      "query": "导出结果保存在哪里？再次导出会覆盖吗？",
+      "expected_sources": [
+        "export.md"
+      ],
+      "mode": "hybrid",
+      "hits": [
+        {
+          "id": "export.md#1",
+          "source": "export.md",
+          "text": "# 结果导出（教学虚构资料）\n\n在示例界面点击“导出结果”，系统会把当前筛选后的数据写到 `exports/result.csv`。导出文件为 UTF-8 编码，只包含数据行，不包含运行日志。再次导出会替换同名文件，需要保留旧结果时请先另存。",
+          "content_sha256": "88bad711ca5a03ea8d57921fb438d01ea441cd9b33ddd3ad13d6b84ad3dab1b1",
+          "rank": 1,
+          "score": 0.03252247488101534,
+          "vector_score": 0.3443595767021179,
+          "lexical_score": 12.086804125438233,
+          "vector_rank": 2,
+          "lexical_rank": 1
+        },
+        {
+          "id": "sample_data.md#1",
+          "source": "sample_data.md",
+          "text": "# 示例数据（教学虚构资料）\n\n演示数据保存在 `data/sample.csv`，包含编号、类别和数值三列。需要更换演示数据时，请保留表头与 UTF-8 编码。这个 CSV 只用于界面展示，不保存用户偏好，也不控制服务监听端口。",
+          "content_sha256": "abd5bf59fae83da8de6a1c577727a3196d07d9635e17092fa2e8975f95bc7579",
+          "rank": 2,
+          "score": 0.03200204813108039,
+          "vector_score": 0.3332443833351135,
+          "lexical_score": 4.072566000798151,
+          "vector_rank": 3,
+          "lexical_rank": 2
+        },
+        {
+          "id": "logging.md#1",
+          "source": "logging.md",
+          "text": "# 运行日志与排查（教学虚构资料）\n\n运行日志写入项目目录下的 `logs/app.log`。运行出错时，先查看该文件最近的错误信息。分享日志前要去除密钥和个人信息。日志中的单条错误只说明对应现象，其他故障需要另行检查。本资料未规定日志保留天数，也未说明自动清理策略。",
+          "content_sha256": "1d9cc19bd44be711f88120e0ec9cc0867fe021b573a6a423fd5357695df24083",
+          "rank": 3,
+          "score": 0.01639344262295082,
+          "vector_score": 0.37561047077178955,
+          "lexical_score": 0.0,
+          "vector_rank": 1,
+          "lexical_rank": null
+        }
+      ],
+      "hit_at_1": true,
+      "source_recall_at_3": 1.0
+    },
+    {
+      "id": "sample",
+      "query": "data/sample.csv 示例数据包含哪些列，更换数据要保留什么？",
+      "expected_sources": [
+        "sample_data.md"
+      ],
+      "mode": "hybrid",
+      "hits": [
+        {
+          "id": "export.md#1",
+          "source": "export.md",
+          "text": "# 结果导出（教学虚构资料）\n\n在示例界面点击“导出结果”，系统会把当前筛选后的数据写到 `exports/result.csv`。导出文件为 UTF-8 编码，只包含数据行，不包含运行日志。再次导出会替换同名文件，需要保留旧结果时请先另存。",
+          "content_sha256": "88bad711ca5a03ea8d57921fb438d01ea441cd9b33ddd3ad13d6b84ad3dab1b1",
+          "rank": 1,
+          "score": 0.03252247488101534,
+          "vector_score": 0.31751739978790283,
+          "lexical_score": 7.012683572730555,
+          "vector_rank": 1,
+          "lexical_rank": 2
+        },
+        {
+          "id": "sample_data.md#1",
+          "source": "sample_data.md",
+          "text": "# 示例数据（教学虚构资料）\n\n演示数据保存在 `data/sample.csv`，包含编号、类别和数值三列。需要更换演示数据时，请保留表头与 UTF-8 编码。这个 CSV 只用于界面展示，不保存用户偏好，也不控制服务监听端口。",
+          "content_sha256": "abd5bf59fae83da8de6a1c577727a3196d07d9635e17092fa2e8975f95bc7579",
+          "rank": 2,
+          "score": 0.03252247488101534,
+          "vector_score": 0.3171842098236084,
+          "lexical_score": 12.622331942135705,
+          "vector_rank": 2,
+          "lexical_rank": 1
+        },
+        {
+          "id": "logging.md#1",
+          "source": "logging.md",
+          "text": "# 运行日志与排查（教学虚构资料）\n\n运行日志写入项目目录下的 `logs/app.log`。运行出错时，先查看该文件最近的错误信息。分享日志前要去除密钥和个人信息。日志中的单条错误只说明对应现象，其他故障需要另行检查。本资料未规定日志保留天数，也未说明自动清理策略。",
+          "content_sha256": "1d9cc19bd44be711f88120e0ec9cc0867fe021b573a6a423fd5357695df24083",
+          "rank": 3,
+          "score": 0.031746031746031744,
+          "vector_score": 0.3111588954925537,
+          "lexical_score": 0.6410163341111472,
+          "vector_rank": 3,
+          "lexical_rank": 3
+        }
+      ],
+      "hit_at_1": false,
+      "source_recall_at_3": 1.0
+    },
+    {
+      "id": "config",
+      "query": "修改 .env 中的 APP_PORT 后运行中的服务会自动生效吗？",
+      "expected_sources": [
+        "configuration.md"
+      ],
+      "mode": "hybrid",
+      "hits": [
+        {
+          "id": "configuration.md#1",
+          "source": "configuration.md",
+          "text": "# 本地配置文件（教学虚构资料）\n\n项目从根目录的 `.env` 读取配置。首次使用将 `.env.example` 复制为 `.env`。`APP_PORT=8000` 表示默认监听端口为 8000；改为 `APP_PORT=8001` 可使用端口 8001。配置在启动时读取，修改后需要重新运行 `python app.py`，已运行的实例需要先正常退出再启动。",
+          "content_sha256": "f3c879fe334af496e83ab8f69899bea2c49c4d7d2ee14a9485ae121f5c16c4b6",
+          "rank": 1,
+          "score": 0.03278688524590164,
+          "vector_score": 0.21462035179138184,
+          "lexical_score": 4.549151192456321,
+          "vector_rank": 1,
+          "lexical_rank": 1
+        },
+        {
+          "id": "sample_data.md#1",
+          "source": "sample_data.md",
+          "text": "# 示例数据（教学虚构资料）\n\n演示数据保存在 `data/sample.csv`，包含编号、类别和数值三列。需要更换演示数据时，请保留表头与 UTF-8 编码。这个 CSV 只用于界面展示，不保存用户偏好，也不控制服务监听端口。",
+          "content_sha256": "abd5bf59fae83da8de6a1c577727a3196d07d9635e17092fa2e8975f95bc7579",
+          "rank": 2,
+          "score": 0.031754032258064516,
+          "vector_score": 0.17802385985851288,
+          "lexical_score": 1.7070352256156656,
+          "vector_rank": 2,
+          "lexical_rank": 4
+        },
+        {
+          "id": "logging.md#1",
+          "source": "logging.md",
+          "text": "# 运行日志与排查（教学虚构资料）\n\n运行日志写入项目目录下的 `logs/app.log`。运行出错时，先查看该文件最近的错误信息。分享日志前要去除密钥和个人信息。日志中的单条错误只说明对应现象，其他故障需要另行检查。本资料未规定日志保留天数，也未说明自动清理策略。",
+          "content_sha256": "1d9cc19bd44be711f88120e0ec9cc0867fe021b573a6a423fd5357695df24083",
+          "rank": 3,
+          "score": 0.03128054740957967,
+          "vector_score": 0.12308166921138763,
+          "lexical_score": 3.2337416591693446,
+          "vector_rank": 6,
+          "lexical_rank": 2
+        }
+      ],
+      "hit_at_1": true,
+      "source_recall_at_3": 1.0
+    },
+    {
+      "id": "backup",
+      "query": "exports/result.csv 再次导出前如何保留旧结果？",
+      "expected_sources": [
+        "export.md"
+      ],
+      "mode": "hybrid",
+      "hits": [
+        {
+          "id": "sample_data.md#1",
+          "source": "sample_data.md",
+          "text": "# 示例数据（教学虚构资料）\n\n演示数据保存在 `data/sample.csv`，包含编号、类别和数值三列。需要更换演示数据时，请保留表头与 UTF-8 编码。这个 CSV 只用于界面展示，不保存用户偏好，也不控制服务监听端口。",
+          "content_sha256": "abd5bf59fae83da8de6a1c577727a3196d07d9635e17092fa2e8975f95bc7579",
+          "rank": 1,
+          "score": 0.03252247488101534,
+          "vector_score": 0.2776153087615967,
+          "lexical_score": 2.3492062200378436,
+          "vector_rank": 1,
+          "lexical_rank": 2
+        },
+        {
+          "id": "export.md#1",
+          "source": "export.md",
+          "text": "# 结果导出（教学虚构资料）\n\n在示例界面点击“导出结果”，系统会把当前筛选后的数据写到 `exports/result.csv`。导出文件为 UTF-8 编码，只包含数据行，不包含运行日志。再次导出会替换同名文件，需要保留旧结果时请先另存。",
+          "content_sha256": "88bad711ca5a03ea8d57921fb438d01ea441cd9b33ddd3ad13d6b84ad3dab1b1",
+          "rank": 2,
+          "score": 0.032018442622950824,
+          "vector_score": 0.2619936466217041,
+          "lexical_score": 17.195112958362493,
+          "vector_rank": 4,
+          "lexical_rank": 1
+        },
+        {
+          "id": "logging.md#1",
+          "source": "logging.md",
+          "text": "# 运行日志与排查（教学虚构资料）\n\n运行日志写入项目目录下的 `logs/app.log`。运行出错时，先查看该文件最近的错误信息。分享日志前要去除密钥和个人信息。日志中的单条错误只说明对应现象，其他故障需要另行检查。本资料未规定日志保留天数，也未说明自动清理策略。",
+          "content_sha256": "1d9cc19bd44be711f88120e0ec9cc0867fe021b573a6a423fd5357695df24083",
+          "rank": 3,
+          "score": 0.031746031746031744,
+          "vector_score": 0.2729613184928894,
+          "lexical_score": 0.6410163341111472,
+          "vector_rank": 3,
+          "lexical_rank": 3
+        }
+      ],
+      "hit_at_1": false,
+      "source_recall_at_3": 1.0
+    },
+    {
+      "id": "privacy",
+      "query": "分享 logs/app.log 前应该去除什么信息？",
+      "expected_sources": [
+        "logging.md"
+      ],
+      "mode": "hybrid",
+      "hits": [
+        {
+          "id": "configuration.md#1",
+          "source": "configuration.md",
+          "text": "# 本地配置文件（教学虚构资料）\n\n项目从根目录的 `.env` 读取配置。首次使用将 `.env.example` 复制为 `.env`。`APP_PORT=8000` 表示默认监听端口为 8000；改为 `APP_PORT=8001` 可使用端口 8001。配置在启动时读取，修改后需要重新运行 `python app.py`，已运行的实例需要先正常退出再启动。",
+          "content_sha256": "f3c879fe334af496e83ab8f69899bea2c49c4d7d2ee14a9485ae121f5c16c4b6",
+          "rank": 1,
+          "score": 0.032266458495966696,
+          "vector_score": 0.3437177538871765,
+          "lexical_score": 0.44667622946602015,
+          "vector_rank": 1,
+          "lexical_rank": 3
+        },
+        {
+          "id": "troubleshooting.md#1",
+          "source": "troubleshooting.md",
+          "text": "# 端口占用错误（教学虚构资料）\n\n启动提示 `Address already in use` 通常表示当前端口已被其他进程占用。可在 `.env` 中将 `APP_PORT` 改成一个空闲端口，例如 8001，再重新启动项目；若 8001 也被占用，需另选空闲端口。不要为了运行示例项目直接结束不属于自己的进程。运行错误详情可查看 `logs/app.log`。",
+          "content_sha256": "5d60cdacf9fcfc426d1c88b273fcda582ff91d63a12eea33a15131cfb330ffc8",
+          "rank": 2,
+          "score": 0.031754032258064516,
+          "vector_score": 0.3254801034927368,
+          "lexical_score": 2.360306329633116,
+          "vector_rank": 4,
+          "lexical_rank": 2
+        },
+        {
+          "id": "logging.md#1",
+          "source": "logging.md",
+          "text": "# 运行日志与排查（教学虚构资料）\n\n运行日志写入项目目录下的 `logs/app.log`。运行出错时，先查看该文件最近的错误信息。分享日志前要去除密钥和个人信息。日志中的单条错误只说明对应现象，其他故障需要另行检查。本资料未规定日志保留天数，也未说明自动清理策略。",
+          "content_sha256": "1d9cc19bd44be711f88120e0ec9cc0867fe021b573a6a423fd5357695df24083",
+          "rank": 3,
+          "score": 0.031544957774465976,
+          "vector_score": 0.28812021017074585,
+          "lexical_score": 7.241968458832454,
+          "vector_rank": 6,
+          "lexical_rank": 1
+        }
+      ],
+      "hit_at_1": false,
+      "source_recall_at_3": 1.0
+    }
+  ],
+  "summary": {
+    "vector": {
+      "n": 8,
+      "hit_at_1": 0.0,
+      "mean_source_recall_at_3": 0.75
+    },
+    "hybrid": {
+      "n": 8,
+      "hit_at_1": 0.375,
+      "mean_source_recall_at_3": 1.0
+    }
+  },
+  "scope": "人工定义的八个小样本；按来源文件统计，不验证片段语义或生成答案，不能代表通用性能"
+}

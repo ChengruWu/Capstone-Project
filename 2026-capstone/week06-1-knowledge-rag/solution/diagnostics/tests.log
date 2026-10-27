@@ -1,0 +1,82 @@
+[step 1] search_knowledge {'query': '端口'} -> ok
+[step 2] search_knowledge {'query': '端口'} -> ok
+[step 1] search_knowledge {'query': '端口'} -> ok
+[step 1] search_knowledge {'query': '端口', 'unexpected': 'x'} -> error
+[step 2] search_knowledge {'query': '端口'} -> ok
+[step 1] search_knowledge {'query': '端口'} -> ok
+[step 2] search_knowledge {'query': '更多'} -> error
+[step 1] search_knowledge {'query': '端口'} -> ok
+[step 1] search_knowledge {'query': 123} -> error
+[step 2] search_knowledge {'query': '端口'} -> ok
+[step 1] search_knowledge {'query': '端口'} -> error
+[step 2] search_knowledge {'query': '端口'} -> ok
+[step 2] search_knowledge {'query': '端口'} -> ok
+[step 2] search_knowledge {'query': '端口'} -> ok
+[step 2] search_knowledge {'query': '端口'} -> ok
+[step 1] search_knowledge {'query': '端口'} -> ok
+[step 1] read_file {'path': 'task.txt'} -> ok
+[step 1] search_knowledge {'query': '端口'} -> ok
+[step 1] search_knowledge {'query': '端口'} -> ok
+[step 2] search_knowledge {'query': '端口'} -> ok
+[step 2] search_knowledge {'query': '端口'} -> ok
+[step 1] search_knowledge {'query': '端口'} -> ok
+[step 1] read_file {'path': 'task.txt'} -> ok
+[step 2] search_knowledge {'query': '端口如何修改'} -> ok
+[step 2] search_knowledge {'query': '端口'} -> ok
+[step 1] search_knowledge {'query': '端口'} -> error
+[step 1] shell {'command': 'echo hi'} -> error
+[step 2] search_knowledge {'query': '端口'} -> ok
+[step 1] search_knowledge {'query': '端口'} -> ok
+test_check_policy_records_failure_without_repair (test_agent.AgentLoopTests.test_check_policy_records_failure_without_repair) ... ok
+test_empty_model_response_is_recorded_then_retried (test_agent.AgentLoopTests.test_empty_model_response_is_recorded_then_retried) ... ok
+test_empty_retrieval_result_cannot_pass (test_agent.AgentLoopTests.test_empty_retrieval_result_cannot_pass) ... ok
+test_extra_tool_argument_is_rejected_before_execution (test_agent.AgentLoopTests.test_extra_tool_argument_is_rejected_before_execution) ... ok
+test_failed_retrieval_does_not_overwrite_previous_valid_evidence (test_agent.AgentLoopTests.test_failed_retrieval_does_not_overwrite_previous_valid_evidence) ... ok
+test_fictional_id_is_rejected_even_when_another_id_is_valid (test_agent.AgentLoopTests.test_fictional_id_is_rejected_even_when_another_id_is_valid) ... ok
+test_invalid_final_at_last_step_fails_without_spending_repair (test_agent.AgentLoopTests.test_invalid_final_at_last_step_fails_without_spending_repair) ... ok
+test_invalid_loop_configuration_is_rejected (test_agent.AgentLoopTests.test_invalid_loop_configuration_is_rejected) ... ok
+test_invalid_tool_parameter_is_feedback_and_can_be_fixed (test_agent.AgentLoopTests.test_invalid_tool_parameter_is_feedback_and_can_be_fixed) ... ok
+test_malformed_retrieval_cannot_partially_add_evidence (test_agent.AgentLoopTests.test_malformed_retrieval_cannot_partially_add_evidence) ... ok
+test_malformed_tool_protocol_can_be_fixed (test_agent.AgentLoopTests.test_malformed_tool_protocol_can_be_fixed) ... ok
+test_max_steps_records_exhaustion_without_answer (test_agent.AgentLoopTests.test_max_steps_records_exhaustion_without_answer) ... ok
+test_model_error_during_repair_keeps_candidate_without_final_answer (test_agent.AgentLoopTests.test_model_error_during_repair_keeps_candidate_without_final_answer) ... ok
+test_model_exception_is_preserved (test_agent.AgentLoopTests.test_model_exception_is_preserved) ... ok
+test_multiple_tool_calls_execute_in_order (test_agent.AgentLoopTests.test_multiple_tool_calls_execute_in_order) ... ok
+test_no_retrieval_cannot_pass_using_a_plausible_id (test_agent.AgentLoopTests.test_no_retrieval_cannot_pass_using_a_plausible_id) ... ok
+test_one_citation_repair_keeps_both_raw_responses (test_agent.AgentLoopTests.test_one_citation_repair_keeps_both_raw_responses) ... ok
+test_repair_can_request_missing_retrieval_then_answer (test_agent.AgentLoopTests.test_repair_can_request_missing_retrieval_then_answer) ... ok
+test_repair_exhaustion_keeps_candidate_without_claiming_final_answer (test_agent.AgentLoopTests.test_repair_exhaustion_keeps_candidate_without_claiming_final_answer) ... ok
+test_second_invalid_answer_fails_without_second_repair (test_agent.AgentLoopTests.test_second_invalid_answer_fails_without_second_repair) ... ok
+test_success_executes_both_tools_and_preserves_sources_and_memory (test_agent.AgentLoopTests.test_success_executes_both_tools_and_preserves_sources_and_memory) ... ok
+test_too_many_calls_are_rejected_without_execution (test_agent.AgentLoopTests.test_too_many_calls_are_rejected_without_execution) ... ok
+test_tool_exception_is_feedback_and_leaves_no_evidence (test_agent.AgentLoopTests.test_tool_exception_is_feedback_and_leaves_no_evidence) ... ok
+test_unknown_tool_does_not_execute (test_agent.AgentLoopTests.test_unknown_tool_does_not_execute) ... ok
+test_web_source_is_rejected_with_valid_fragment_id (test_agent.AgentLoopTests.test_web_source_is_rejected_with_valid_fragment_id) ... ok
+test_empty_retrieval_does_not_count_as_evidence (test_agent.CitationAndPersistenceTests.test_empty_retrieval_does_not_count_as_evidence) ... ok
+test_malformed_bracket_is_reported (test_agent.CitationAndPersistenceTests.test_malformed_bracket_is_reported) ... ok
+test_result_save_preserves_unicode_and_refuses_overwrite (test_agent.CitationAndPersistenceTests.test_result_save_preserves_unicode_and_refuses_overwrite) ... ok
+test_semantically_wrong_answer_can_pass_id_check_scope_is_explicit (test_agent.CitationAndPersistenceTests.test_semantically_wrong_answer_can_pass_id_check_scope_is_explicit) ... ok
+test_tool_parser_retains_json_arguments_exactly (test_agent.CitationAndPersistenceTests.test_tool_parser_retains_json_arguments_exactly) ... ok
+test_chunk_parameter_validation_and_empty_folder (test_components.FileAndChunkTests.test_chunk_parameter_validation_and_empty_folder) ... ok
+test_chunks_have_overlap_ids_sources_and_hashes (test_components.FileAndChunkTests.test_chunks_have_overlap_ids_sources_and_hashes) ... ok
+test_exact_end_no_extra_chunk_and_short_tail (test_components.FileAndChunkTests.test_exact_end_no_extra_chunk_and_short_tail) ... ok
+test_read_limit_and_unicode (test_components.FileAndChunkTests.test_read_limit_and_unicode) ... ok
+test_reject_path_escape_and_windows_paths (test_components.FileAndChunkTests.test_reject_path_escape_and_windows_paths) ... ok
+test_symlink_boundary (test_components.FileAndChunkTests.test_symlink_boundary) ... ok
+test_deterministic_ties_and_invalid_vector_scores (test_components.KnowledgeBaseTests.test_deterministic_ties_and_invalid_vector_scores) ... ok
+test_hybrid_promotes_exact_identifier_and_reports_evidence (test_components.KnowledgeBaseTests.test_hybrid_promotes_exact_identifier_and_reports_evidence) ... ok
+test_lazy_constructor_and_query_validation (test_components.KnowledgeBaseTests.test_lazy_constructor_and_query_validation) ... ok
+test_no_lexical_hit_does_not_boost_zero_score_documents (test_components.KnowledgeBaseTests.test_no_lexical_hit_does_not_boost_zero_score_documents) ... ok
+test_bm25_matches_chinese_and_case_insensitive_error_identifier (test_components.LexicalAndFusionTests.test_bm25_matches_chinese_and_case_insensitive_error_identifier) ... ok
+test_bm25_rare_term_and_length_normalization (test_components.LexicalAndFusionTests.test_bm25_rare_term_and_length_normalization) ... ok
+test_chinese_bigrams_and_english_identifiers (test_components.LexicalAndFusionTests.test_chinese_bigrams_and_english_identifiers) ... ok
+test_rrf_contributions_are_rank_based (test_components.LexicalAndFusionTests.test_rrf_contributions_are_rank_based) ... ok
+test_failed_atomic_replace_preserves_previous_file (test_components.MemoryTests.test_failed_atomic_replace_preserves_previous_file) ... ok
+test_overwrite_delete_and_reload (test_components.MemoryTests.test_overwrite_delete_and_reload) ... ok
+test_reject_bad_format (test_components.MemoryTests.test_reject_bad_format) ... ok
+test_reject_invalid_keys_and_values_without_writing (test_components.MemoryTests.test_reject_invalid_keys_and_values_without_writing) ... ok
+
+----------------------------------------------------------------------
+Ran 48 tests in 0.123s
+
+OK

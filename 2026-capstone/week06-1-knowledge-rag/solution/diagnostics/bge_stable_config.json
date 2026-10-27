@@ -1,0 +1,21 @@
+{
+  "config": {
+    "attention": "eager",
+    "cpu_threads": 1,
+    "dtype": "torch.float32"
+  },
+  "finite": true,
+  "repeated_query_max_abs_diff": 0.0,
+  "retrieval_summary": {
+    "vector": {
+      "n": 8,
+      "hit_at_1": 0.875,
+      "mean_source_recall_at_3": 1.0
+    },
+    "hybrid": {
+      "n": 8,
+      "hit_at_1": 1.0,
+      "mean_source_recall_at_3": 1.0
+    }
+  }
+}
